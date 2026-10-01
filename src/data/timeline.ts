@@ -22,7 +22,7 @@ export const TIMELINE: TimelineMilestone[] = [
     title: "INAUGURATION",
     subtitle: "IN-PERSON KICK-OFF",
     time: "10:30 AM",
-    location: "5th Floor, Conference Room, EB",
+    location: "5th Floor, Conference Room, Engineering Block",
     type: "in-person",
     description:
       "Official briefing, track walkthrough, and Discord onboarding. The program continues online via GitHub and Discord.",

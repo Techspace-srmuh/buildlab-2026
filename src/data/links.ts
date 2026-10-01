@@ -11,14 +11,14 @@ export const LINKS = {
   // Organization website
   techspaceWeb: "https://techspace.club",
 
-  // In-page section anchors
-  explore: "#about",
-  tracks: "#tracks",
-  timeline: "#timeline",
-  projects: "#projects",
-  mentors: "#mentors",
-  discordGuide: "#discord",
-  githubWorkflow: "#workflow",
-  prizes: "#prizes",
-  registration: "#register",
+  // Global cross-route anchors
+  explore: "/#about",
+  tracks: "/#tracks",
+  timeline: "/#timeline",
+  projects: "/#projects",
+  mentors: "/#mentors",
+  discordGuide: "/#discord",
+  githubWorkflow: "/#workflow",
+  prizes: "/#prizes",
+  registration: "/#register",
 };
