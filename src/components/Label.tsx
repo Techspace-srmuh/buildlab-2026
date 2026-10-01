@@ -23,7 +23,7 @@ export function Label({
 
   switch (variant) {
     case "solid":
-      variantStyles = "bg-[var(--foreground)] text-[var(--background)] font-semibold rounded-[4px]";
+      variantStyles = "bg-[var(--foreground)] text-[color:var(--background)] font-semibold rounded-[4px]";
       break;
     case "outline":
       variantStyles =
@@ -45,9 +45,15 @@ export function Label({
       variantStyles = "text-[var(--foreground)] font-semibold";
   }
 
+  const labelStyle: React.CSSProperties = {
+    ...(variant === "solid" ? { color: "var(--background)" } : {}),
+    ...props.style,
+  };
+
   return (
     <span
       className={`inline-flex items-center uppercase font-mono select-none ${sizeStyles} ${variantStyles} ${className}`}
+      style={labelStyle}
       {...props}
     >
       {children}

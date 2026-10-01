@@ -34,7 +34,10 @@ export function BrowserWindow({
         )}
 
         {badge ? (
-          <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-[var(--foreground)] text-[var(--background)]">
+          <span
+            className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-[var(--foreground)] text-[color:var(--background)] font-bold tracking-wider"
+            style={{ color: "var(--background)" }}
+          >
             {badge}
           </span>
         ) : (

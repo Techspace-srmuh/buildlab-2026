@@ -74,9 +74,10 @@ export function Projects() {
                 aria-pressed={isActive}
                 className={`font-mono text-[12px] md:text-[13px] uppercase tracking-widest px-4 py-2 rounded-[6px] transition-all duration-200 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--foreground)] ${
                   isActive
-                    ? "bg-[var(--foreground)] text-[var(--background)] font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,0.15)]"
+                    ? "bg-[var(--foreground)] text-[color:var(--background)] font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,0.15)]"
                     : "bg-transparent text-[var(--foreground)] border border-[var(--border)] hover:border-[var(--foreground)] font-medium"
                 }`}
+                style={isActive ? { color: "var(--background)" } : undefined}
               >
                 {filter.label}
               </button>

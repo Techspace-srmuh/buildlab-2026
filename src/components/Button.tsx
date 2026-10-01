@@ -37,9 +37,9 @@ export function Button({
 
   const variantStyles = {
     primary:
-      "bg-[var(--foreground)] text-[var(--background)] border border-[var(--foreground)] hover:opacity-90 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.15)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.25)] hover:-translate-y-0.5",
+      "bg-[var(--foreground)] text-[color:var(--background)] border border-[var(--foreground)] hover:opacity-90 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.15)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.25)] hover:-translate-y-0.5",
     secondary:
-      "bg-transparent text-[var(--foreground)] border border-[var(--foreground)] hover:bg-[var(--foreground)] hover:text-[var(--background)] hover:-translate-y-0.5",
+      "bg-transparent text-[var(--foreground)] border border-[var(--foreground)] hover:bg-[var(--foreground)] hover:text-[color:var(--background)] hover:-translate-y-0.5",
     outline:
       "bg-transparent text-[var(--foreground)] border border-[var(--border)] hover:border-[var(--foreground)] hover:-translate-y-0.5",
     ghost:
@@ -59,6 +59,11 @@ export function Button({
 
   const disabledStyles = "opacity-50 cursor-not-allowed pointer-events-none shadow-none hover:translate-y-0";
 
+  const customStyle: React.CSSProperties = {
+    ...(variant === "primary" ? { color: "var(--background)" } : {}),
+    ...props.style,
+  };
+
   if (href && !props.disabled) {
     const isExternal = href.startsWith("http") || target === "_blank";
     return (
@@ -67,6 +72,7 @@ export function Button({
         target={target || (isExternal ? "_blank" : undefined)}
         rel={rel || (isExternal ? "noopener noreferrer" : undefined)}
         className={`${baseStyles} ${sizeStyles} ${variantStyles} ${className}`}
+        style={customStyle}
       >
         {content}
       </Link>
@@ -78,6 +84,7 @@ export function Button({
       className={`${baseStyles} ${sizeStyles} ${variantStyles} ${
         props.disabled ? disabledStyles : ""
       } ${className}`}
+      style={customStyle}
       {...props}
     >
       {content}

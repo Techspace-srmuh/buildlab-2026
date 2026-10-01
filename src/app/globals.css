@@ -140,6 +140,10 @@ body {
   color: var(--background);
 }
 
+.text-background {
+  color: var(--background) !important;
+}
+
 /* Theme-Aware Spectrum Gradient Utilities */
 .spectrum-gradient-text {
   background: linear-gradient(

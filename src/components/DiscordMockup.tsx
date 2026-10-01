@@ -114,9 +114,10 @@ export function DiscordMockup() {
                         onClick={() => setActiveChannelId(ch.id)}
                         className={`w-full flex items-center justify-between text-left px-2 py-1.5 rounded-[6px] font-mono text-[12px] transition-all duration-150 cursor-pointer ${
                           isActive
-                            ? "bg-[var(--foreground)] text-[var(--background)] font-bold shadow-[2px_2px_0px_0px_var(--border)]"
+                            ? "bg-[var(--foreground)] text-[color:var(--background)] font-bold shadow-[2px_2px_0px_0px_var(--border)]"
                             : "text-[var(--foreground)]/80 hover:bg-[var(--surface-muted)] hover:text-[var(--foreground)]"
                         }`}
+                        style={isActive ? { color: "var(--background)" } : undefined}
                       >
                         <span className="flex items-center gap-1.5 truncate">
                           <span className={isActive ? "text-[var(--cyan)]" : "text-[var(--muted-foreground)]"}>
@@ -172,7 +173,10 @@ export function DiscordMockup() {
             {/* Simulated Server Guide Post */}
             <div className="space-y-3 pt-2">
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-full bg-[var(--foreground)] text-[var(--background)] flex items-center justify-center font-mono font-black text-xs">
+                <div
+                  className="w-7 h-7 rounded-full bg-[var(--foreground)] text-[color:var(--background)] flex items-center justify-center font-mono font-black text-xs"
+                  style={{ color: "var(--background)" }}
+                >
                   TS
                 </div>
                 <div>
@@ -197,7 +201,10 @@ export function DiscordMockup() {
                     this server acts as your operational engineering hub throughout the three-week sprint.
                   </p>
                   <div className="pt-2 flex flex-wrap gap-2 font-mono text-[10px]">
-                    <span className="px-2 py-0.5 rounded bg-[var(--foreground)] text-[var(--background)] font-bold">
+                    <span
+                      className="px-2 py-0.5 rounded bg-[var(--foreground)] text-[color:var(--background)] font-bold"
+                      style={{ color: "var(--background)" }}
+                    >
                       # GITHUB INTEGRATION
                     </span>
                     <span className="px-2 py-0.5 rounded border border-[var(--border)] text-[var(--foreground)] font-semibold">
