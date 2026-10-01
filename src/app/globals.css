@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #F4F4E8;
+  --color-ink: #080808;
+
+  --color-brand-blue: #1457D9;
+  --color-brand-cyan: #18B8D4;
+  --color-brand-green: #62C94A;
+  --color-brand-yellow: #F3D21A;
+
+  --color-soft-blue: #DCEBFF;
+  --color-soft-cyan: #DDF6F7;
+  --color-soft-green: #E5F4D8;
+  --color-soft-yellow: #FFF3B8;
+
+  --color-muted-gray: #6D6D68;
+  --color-border-line: #CFCFC4;
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+:root {
+  --font-display: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Impact', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --paper: #F4F4E8;
+  --ink: #080808;
+
+  --blue: #1457D9;
+  --cyan: #18B8D4;
+  --green: #62C94A;
+  --yellow: #F3D21A;
+
+  --blue-soft: #DCEBFF;
+  --cyan-soft: #DDF6F7;
+  --green-soft: #E5F4D8;
+  --yellow-soft: #FFF3B8;
+
+  --gray: #6D6D68;
+  --line: #CFCFC4;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --content-max: 1440px;
+}
+
+html {
+  background-color: var(--paper);
+  color: var(--ink);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+/* Spectrum Gradient Utility */
+.spectrum-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #1457D9 0%,
+    #18B8D4 38%,
+    #62C94A 68%,
+    #F3D21A 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.spectrum-gradient-bg {
+  background: linear-gradient(
+    90deg,
+    #1457D9 0%,
+    #18B8D4 38%,
+    #62C94A 68%,
+    #F3D21A 100%
+  );
+}
+
+/* Subtle Technical Grid Lines */
+.grid-editorial {
+  position: relative;
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(207, 207, 196, 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(207, 207, 196, 0.45) 1px, transparent 1px);
+}
+
+.grid-dots {
+  background-size: 20px 20px;
+  background-image: radial-gradient(circle, #6D6D68 1px, transparent 1px);
+}
