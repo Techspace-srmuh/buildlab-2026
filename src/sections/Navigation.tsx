@@ -6,6 +6,8 @@ import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { LINKS } from "@/data/links";
 
+import { ThemeToggle } from "@/components/ThemeToggle";
+
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,10 +36,10 @@ export function Navigation() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-200 border-b border-[#CFCFC4] ${
+      className={`sticky top-0 z-50 w-full transition-all duration-200 border-b border-[var(--border)] ${
         isScrolled
-          ? "bg-[#F4F4E8]/92 backdrop-blur-md py-3 shadow-[0_2px_10px_rgba(0,0,0,0.03)]"
-          : "bg-[#F4F4E8] py-4"
+          ? "bg-[var(--background)]/90 backdrop-blur-md py-3 shadow-[0_2px_10px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_10px_rgba(0,0,0,0.3)]"
+          : "bg-[var(--background)] py-4"
       }`}
     >
       <Container>
@@ -45,90 +47,95 @@ export function Navigation() {
           {/* Brand Logo */}
           <Link
             href="/"
-            className="group flex flex-col items-start select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ink)]"
+            className="group flex flex-col items-start select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--foreground)]"
           >
-            <span className="font-mono text-[10px] md:text-[11px] tracking-[0.2em] uppercase text-[var(--gray)] font-medium group-hover:text-[var(--ink)] transition-colors">
+            <span className="font-mono text-[10px] md:text-[11px] tracking-[0.2em] uppercase text-[var(--muted-foreground)] font-medium group-hover:text-[var(--foreground)] transition-colors">
               TECHSPACE
             </span>
             <div className="flex items-center gap-1.5">
-              <span className="font-display font-black text-xl md:text-2xl tracking-tight uppercase text-[var(--ink)]">
+              <span className="font-display font-black text-xl md:text-2xl tracking-tight uppercase text-[var(--foreground)]">
                 BUILDLAB ’26
               </span>
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#18B8D4]" />
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--cyan)]" />
             </div>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+          <nav className="hidden lg:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="font-mono text-[12px] lg:text-[13px] uppercase tracking-[0.12em] font-medium text-[var(--ink)]/80 hover:text-[var(--ink)] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[var(--ink)] hover:after:w-full after:transition-all after:duration-200"
+                className="font-mono text-[12px] lg:text-[13px] uppercase tracking-[0.12em] font-medium text-[var(--foreground)]/80 hover:text-[var(--foreground)] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[var(--foreground)] hover:after:w-full after:transition-all after:duration-200"
               >
                 {link.name}
               </a>
             ))}
           </nav>
 
-          {/* Action / Discord CTA Button */}
-          <div className="hidden md:flex items-center gap-3">
-            <Button
-              href={LINKS.discord || LINKS.discordGuide}
-              target={LINKS.discord ? "_blank" : undefined}
-              size="sm"
-              variant="primary"
-              withArrow
-              arrowDirection={LINKS.discord ? "up-right" : "right"}
-            >
-              JOIN DISCORD
-            </Button>
-          </div>
+          {/* Action / Theme Toggle / Discord CTA Button */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Direct Theme Toggle button */}
+            <ThemeToggle />
 
-          {/* Mobile Menu Toggle Button */}
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-[var(--ink)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ink)] rounded"
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileMenuOpen}
-          >
-            <div className="w-5 h-4 flex flex-col justify-between">
-              <span
-                className={`h-0.5 w-full bg-[var(--ink)] transition-all duration-200 ${
-                  mobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
-                }`}
-              />
-              <span
-                className={`h-0.5 w-full bg-[var(--ink)] transition-opacity duration-200 ${
-                  mobileMenuOpen ? "opacity-0" : ""
-                }`}
-              />
-              <span
-                className={`h-0.5 w-full bg-[var(--ink)] transition-all duration-200 ${
-                  mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
-                }`}
-              />
+            <div className="hidden md:block">
+              <Button
+                href={LINKS.discord || LINKS.discordGuide}
+                target={LINKS.discord ? "_blank" : undefined}
+                size="sm"
+                variant="primary"
+                withArrow
+                arrowDirection={LINKS.discord ? "up-right" : "right"}
+              >
+                JOIN DISCORD
+              </Button>
             </div>
-          </button>
+
+            {/* Mobile Menu Toggle Button */}
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 text-[var(--foreground)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--foreground)] rounded"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
+            >
+              <div className="w-5 h-4 flex flex-col justify-between">
+                <span
+                  className={`h-0.5 w-full bg-[var(--foreground)] transition-all duration-200 ${
+                    mobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
+                  }`}
+                />
+                <span
+                  className={`h-0.5 w-full bg-[var(--foreground)] transition-opacity duration-200 ${
+                    mobileMenuOpen ? "opacity-0" : ""
+                  }`}
+                />
+                <span
+                  className={`h-0.5 w-full bg-[var(--foreground)] transition-all duration-200 ${
+                    mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+                  }`}
+                />
+              </div>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden pt-4 pb-6 mt-3 border-t border-[#CFCFC4] flex flex-col gap-4 animate-in fade-in slide-in-from-top-2 duration-150">
+          <div className="md:hidden pt-4 pb-6 mt-3 border-t border-[var(--border)] flex flex-col gap-4 animate-in fade-in slide-in-from-top-2 duration-150">
             <nav className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-mono text-sm uppercase tracking-wider text-[var(--ink)] hover:underline py-1.5"
+                  className="font-mono text-sm uppercase tracking-wider text-[var(--foreground)] hover:underline py-1.5"
                 >
                   {link.name}
                 </a>
               ))}
             </nav>
-            <div className="pt-2">
+            <div className="pt-3 border-t border-[var(--border)] flex flex-col gap-3">
               <Button
                 href={LINKS.discord || LINKS.discordGuide}
                 target={LINKS.discord ? "_blank" : undefined}

@@ -33,7 +33,7 @@ function TrackScientificGraphic({
           cx="60"
           cy="60"
           r="42"
-          stroke="#CFCFC4"
+          stroke="var(--border)"
           strokeWidth="1"
           strokeDasharray="3 3"
         />
@@ -43,20 +43,20 @@ function TrackScientificGraphic({
           cy="60"
           rx="48"
           ry="20"
-          stroke="#080808"
+          stroke="var(--foreground)"
           strokeWidth="1.2"
           transform="rotate(-25 60 60)"
         />
         {/* Central Particle */}
-        <circle cx="60" cy="60" r="9" fill={accentHex} stroke="#080808" strokeWidth="2" />
-        <circle cx="60" cy="60" r="3" fill="#F4F4E8" />
+        <circle cx="60" cy="60" r="9" fill={accentHex} stroke="var(--foreground)" strokeWidth="2" />
+        <circle cx="60" cy="60" r="3" fill="var(--background)" />
         {/* Satellite Node 1 (Cyan) */}
         <circle
           cx={isHovered && !shouldReduceMotion ? "24" : "20"}
           cy={isHovered && !shouldReduceMotion ? "40" : "44"}
           r="6"
-          fill="#18B8D4"
-          stroke="#080808"
+          fill="var(--cyan)"
+          stroke="var(--foreground)"
           strokeWidth="1.5"
           className="transition-all duration-300"
         />
@@ -65,13 +65,13 @@ function TrackScientificGraphic({
           cx={isHovered && !shouldReduceMotion ? "98" : "100"}
           cy={isHovered && !shouldReduceMotion ? "74" : "76"}
           r="5"
-          fill="#080808"
+          fill="var(--foreground)"
           className="transition-all duration-300"
         />
         {/* Sparkle */}
         <path
           d="M85 30 Q 85 36 79 36 Q 85 36 85 42 Q 85 36 91 36 Q 85 36 85 30 Z"
-          fill="#080808"
+          fill="var(--foreground)"
         />
       </svg>
     );
@@ -93,7 +93,7 @@ function TrackScientificGraphic({
           y1="60"
           x2="82"
           y2="60"
-          stroke="#080808"
+          stroke="var(--foreground)"
           strokeWidth="2.5"
         />
         <line
@@ -101,7 +101,7 @@ function TrackScientificGraphic({
           y1="60"
           x2="24"
           y2="34"
-          stroke="#080808"
+          stroke="var(--foreground)"
           strokeWidth="1.5"
           strokeDasharray="2 2"
         />
@@ -110,13 +110,13 @@ function TrackScientificGraphic({
           y1="60"
           x2="96"
           y2="86"
-          stroke="#080808"
+          stroke="var(--foreground)"
           strokeWidth="1.5"
           strokeDasharray="2 2"
         />
 
         {/* Outer Ring */}
-        <circle cx="60" cy="60" r="44" stroke="#CFCFC4" strokeWidth="1" strokeDasharray="4 4" />
+        <circle cx="60" cy="60" r="44" stroke="var(--border)" strokeWidth="1" strokeDasharray="4 4" />
 
         {/* Primary Core Node A */}
         <circle
@@ -124,10 +124,10 @@ function TrackScientificGraphic({
           cy="60"
           r="10"
           fill={accentHex}
-          stroke="#080808"
+          stroke="var(--foreground)"
           strokeWidth="2"
         />
-        <circle cx="38" cy="60" r="3" fill="#F4F4E8" />
+        <circle cx="38" cy="60" r="3" fill="var(--background)" />
 
         {/* Primary Core Node B */}
         <circle
@@ -135,14 +135,14 @@ function TrackScientificGraphic({
           cy="60"
           r="10"
           fill={accentHex}
-          stroke="#080808"
+          stroke="var(--foreground)"
           strokeWidth="2"
         />
-        <circle cx="82" cy="60" r="3" fill="#F4F4E8" />
+        <circle cx="82" cy="60" r="3" fill="var(--background)" />
 
         {/* Secondary Satellite Nodes */}
-        <circle cx="24" cy="34" r="5" fill="#080808" />
-        <circle cx="96" cy="86" r="5" fill="#080808" />
+        <circle cx="24" cy="34" r="5" fill="var(--foreground)" />
+        <circle cx="96" cy="86" r="5" fill="var(--foreground)" />
       </svg>
     );
   }
@@ -157,7 +157,7 @@ function TrackScientificGraphic({
       aria-hidden="true"
     >
       {/* Outer Alignment Grid */}
-      <circle cx="60" cy="60" r="45" stroke="#CFCFC4" strokeWidth="1" strokeDasharray="3 3" />
+      <circle cx="60" cy="60" r="45" stroke="var(--border)" strokeWidth="1" strokeDasharray="3 3" />
 
       {/* Isometric Cube */}
       <g
@@ -169,16 +169,16 @@ function TrackScientificGraphic({
         {/* Top Face */}
         <polygon
           points="0,-32 28,-16 0,0 -28,-16"
-          fill="#FFF3B8"
-          stroke="#080808"
+          fill="var(--yellow-soft)"
+          stroke="var(--foreground)"
           strokeWidth="1.75"
           strokeLinejoin="round"
         />
         {/* Left Face */}
         <polygon
           points="-28,-16 0,0 0,32 -28,16"
-          fill="#F4F4E8"
-          stroke="#080808"
+          fill="var(--background)"
+          stroke="var(--foreground)"
           strokeWidth="1.75"
           strokeLinejoin="round"
         />
@@ -186,13 +186,13 @@ function TrackScientificGraphic({
         <polygon
           points="0,0 28,-16 28,16 0,32"
           fill={accentHex}
-          stroke="#080808"
+          stroke="var(--foreground)"
           strokeWidth="1.75"
           strokeLinejoin="round"
         />
 
         {/* Center Vertex Dot */}
-        <circle cx="0" cy="0" r="3" fill="#080808" />
+        <circle cx="0" cy="0" r="3" fill="var(--foreground)" />
       </g>
     </svg>
   );
@@ -207,28 +207,28 @@ function TrackCard({ track }: { track: Track }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between border border-[#CFCFC4] rounded-[16px] md:rounded-[20px] bg-[var(--paper)] p-6 sm:p-8 lg:p-8 min-h-[380px] sm:min-h-[420px] transition-all duration-300 hover:border-[var(--ink)] hover:shadow-[4px_4px_0px_0px_rgba(8,8,8,0.12)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ink)]"
+      className="group relative flex flex-col justify-between border border-[var(--border)] rounded-[16px] md:rounded-[20px] bg-[var(--surface-card)] p-6 sm:p-8 lg:p-8 min-h-[380px] sm:min-h-[420px] transition-all duration-300 hover:border-[var(--foreground)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.12)] dark:hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.4)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--foreground)]"
     >
       {/* Top Card Bar: Track Number & Technical Tag */}
       <div>
-        <div className="flex items-start justify-between border-b border-[#CFCFC4] pb-4 mb-6">
+        <div className="flex items-start justify-between border-b border-[var(--border)] pb-4 mb-6">
           <div className="flex items-baseline gap-2">
             <span
-              className="font-display font-black text-3xl sm:text-4xl text-[var(--ink)] tracking-tight transition-transform duration-200 group-hover:-translate-y-0.5"
+              className="font-display font-black text-3xl sm:text-4xl text-[var(--foreground)] tracking-tight transition-transform duration-200 group-hover:-translate-y-0.5"
             >
               {track.number}
             </span>
-            <span className="font-mono text-[10px] text-[var(--gray)] uppercase tracking-widest">
+            <span className="font-mono text-[10px] text-[var(--muted-foreground)] uppercase tracking-widest">
               / TRACK
             </span>
           </div>
 
           <span
-            className="font-mono text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-[4px] border border-[#CFCFC4]"
+            className="font-mono text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-[4px] border"
             style={{
               backgroundColor: isHovered ? track.softHex : "transparent",
-              color: isHovered ? "#080808" : "var(--gray)",
-              borderColor: isHovered ? track.accentHex : "#CFCFC4",
+              color: isHovered ? "var(--foreground)" : "var(--muted-foreground)",
+              borderColor: isHovered ? track.accentHex : "var(--border)",
             }}
           >
             {track.symbol}
@@ -237,7 +237,7 @@ function TrackCard({ track }: { track: Track }) {
 
         {/* Track Title and Team Format (Primary Hierarchy) */}
         <div className="space-y-2">
-          <h3 className="font-display font-black text-4xl sm:text-5xl lg:text-5xl uppercase tracking-[-0.02em] text-[var(--ink)] leading-[0.9]">
+          <h3 className="font-display font-black text-4xl sm:text-5xl lg:text-5xl uppercase tracking-[-0.02em] text-[var(--foreground)] leading-[0.9]">
             {track.name}
           </h3>
 
@@ -246,11 +246,11 @@ function TrackCard({ track }: { track: Track }) {
               className="inline-block w-2.5 h-2.5 rounded-full"
               style={{ backgroundColor: track.accentHex }}
             />
-            <span className="font-mono font-bold text-base sm:text-lg uppercase tracking-wider text-[var(--ink)]">
+            <span className="font-mono font-bold text-base sm:text-lg uppercase tracking-wider text-[var(--foreground)]">
               {track.format}
             </span>
             {track.teamSize && (
-              <span className="font-mono text-xs uppercase tracking-wider text-[var(--gray)]">
+              <span className="font-mono text-xs uppercase tracking-wider text-[var(--muted-foreground)]">
                 · {track.teamSize}
               </span>
             )}
@@ -268,8 +268,8 @@ function TrackCard({ track }: { track: Track }) {
       </div>
 
       {/* Bottom Card Bar: Expanding Accent Line & Directional Arrow */}
-      <div className="pt-4 border-t border-[#CFCFC4] flex items-center justify-between">
-        <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[var(--gray)] font-medium">
+      <div className="pt-4 border-t border-[var(--border)] flex items-center justify-between">
+        <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[var(--muted-foreground)] font-medium">
           <span>SELECT TRACK</span>
         </div>
 
@@ -284,8 +284,7 @@ function TrackCard({ track }: { track: Track }) {
           />
 
           <span
-            className="transition-transform duration-200 group-hover:translate-x-1.5"
-            style={{ color: "var(--ink)" }}
+            className="transition-transform duration-200 group-hover:translate-x-1.5 text-[var(--foreground)]"
           >
             <Arrow direction="right" className="w-4 h-4" />
           </span>
@@ -301,17 +300,17 @@ export function Tracks() {
   const easeCurve = [0.22, 1, 0.36, 1] as const;
 
   return (
-    <Section id="tracks" className="bg-[var(--paper)]">
+    <Section id="tracks" className="bg-[var(--background)]">
       <Container>
         {/* Section Header Strip */}
-        <div className="flex items-center justify-between border-b border-[#CFCFC4] pb-3 mb-10 md:mb-14">
+        <div className="flex items-center justify-between border-b border-[var(--border)] pb-3 mb-10 md:mb-14">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-[var(--ink)] inline-block" />
-            <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--ink)]">
+            <span className="w-2 h-2 bg-[var(--foreground)] inline-block" />
+            <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--foreground)]">
               02 / TRACKS
             </span>
           </div>
-          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.16em] text-[var(--gray)]">
+          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.16em] text-[var(--muted-foreground)]">
             PROGRAM FORMATS
           </span>
         </div>
@@ -319,15 +318,15 @@ export function Tracks() {
         {/* Section Title & Supporting Editorial Copy */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 mb-12 md:mb-16 items-end">
           <div className="lg:col-span-7">
-            <h2 className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-[80px] uppercase tracking-[-0.03em] leading-[0.9] text-[var(--ink)]">
+            <h2 className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-[80px] uppercase tracking-[-0.03em] leading-[0.9] text-[var(--foreground)]">
               CHOOSE
               <br />
               <span className="spectrum-gradient-text">YOUR TRACK.</span>
             </h2>
           </div>
 
-          <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-[#CFCFC4] pt-4 lg:pt-0 lg:pl-8">
-            <p className="font-mono text-[14px] sm:text-[15px] uppercase tracking-wider text-[var(--ink)] leading-relaxed font-medium">
+          <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-[var(--border)] pt-4 lg:pt-0 lg:pl-8">
+            <p className="font-mono text-[14px] sm:text-[15px] uppercase tracking-wider text-[var(--foreground)] leading-relaxed font-medium">
               Three formats. Three levels of project scope. Choose the format that matches your
               experience and team size.
             </p>

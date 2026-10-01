@@ -21,7 +21,7 @@ export function Section({
       id={id}
       className={`relative w-full py-16 md:py-24 lg:py-28 ${
         id ? "scroll-mt-16 md:scroll-mt-20" : ""
-      } ${bordered ? "border-b border-[#CFCFC4]" : ""} ${
+      } ${bordered ? "border-b border-[var(--border)]" : ""} ${
         withGrid ? "grid-editorial" : ""
       } ${className}`}
       {...props}

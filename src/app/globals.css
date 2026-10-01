@@ -2,32 +2,43 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #F4F4E8;
-  --color-ink: #080808;
+  --color-paper: var(--background);
+  --color-ink: var(--foreground);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-line: var(--border);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-card: var(--surface-card);
 
-  --color-brand-blue: #1457D9;
-  --color-brand-cyan: #18B8D4;
-  --color-brand-green: #62C94A;
-  --color-brand-yellow: #F3D21A;
+  --color-brand-blue: var(--blue);
+  --color-brand-cyan: var(--cyan);
+  --color-brand-green: var(--green);
+  --color-brand-yellow: var(--yellow);
 
-  --color-soft-blue: #DCEBFF;
-  --color-soft-cyan: #DDF6F7;
-  --color-soft-green: #E5F4D8;
-  --color-soft-yellow: #FFF3B8;
+  --color-soft-blue: var(--blue-soft);
+  --color-soft-cyan: var(--cyan-soft);
+  --color-soft-green: var(--green-soft);
+  --color-soft-yellow: var(--yellow-soft);
 
-  --color-muted-gray: #6D6D68;
-  --color-border-line: #CFCFC4;
+  --color-muted-gray: var(--muted-foreground);
+  --color-border-line: var(--border);
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
 }
 
 :root {
-  --font-display: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Impact', sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  /* LIGHT THEME (Authoritative Tokens) */
+  --background: #F4F4E8;
+  --foreground: #080808;
+  --muted-foreground: #6D6D68;
+  --border: #CFCFC4;
 
-  --paper: #F4F4E8;
-  --ink: #080808;
+  --surface: #FFFFFF;
+  --surface-muted: #ECECE2;
+  --surface-card: #F4F4E8;
 
   --blue: #1457D9;
   --cyan: #18B8D4;
@@ -39,8 +50,14 @@
   --green-soft: #E5F4D8;
   --yellow-soft: #FFF3B8;
 
-  --gray: #6D6D68;
-  --line: #CFCFC4;
+  /* Aliases for backwards compatibility with existing components */
+  --paper: var(--background);
+  --ink: var(--foreground);
+  --gray: var(--muted-foreground);
+  --line: var(--border);
+
+  --font-display: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Impact', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
   --radius-sm: 10px;
   --radius-md: 16px;
@@ -49,29 +66,64 @@
   --content-max: 1440px;
 }
 
+.dark {
+  /* DARK THEME (Deliberate Swiss Scientific Equivalent) */
+  --background: #090A0A;
+  --foreground: #F4F4E8;
+  --muted-foreground: #A5A59E;
+  --border: #292B2A;
+
+  --surface: #111313;
+  --surface-muted: #171918;
+  --surface-card: #111313;
+
+  --blue: #4C82FF;
+  --cyan: #39D2E8;
+  --green: #78D85E;
+  --yellow: #F4D84A;
+
+  --blue-soft: rgba(76, 130, 255, 0.16);
+  --cyan-soft: rgba(57, 210, 232, 0.16);
+  --green-soft: rgba(120, 216, 94, 0.16);
+  --yellow-soft: rgba(244, 216, 74, 0.16);
+
+  --paper: var(--background);
+  --ink: var(--foreground);
+  --gray: var(--muted-foreground);
+  --line: var(--border);
+}
+
+*, ::before, ::after {
+  border-color: var(--border);
+}
+
 html {
-  background-color: var(--paper);
-  color: var(--ink);
+  background-color: var(--background);
+  color: var(--foreground);
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 body {
-  background-color: var(--paper);
-  color: var(--ink);
+  background-color: var(--background);
+  color: var(--foreground);
   min-height: 100vh;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Reduced Motion Compliance (Phase 7 Requirement) */
 @media (prefers-reduced-motion: reduce) {
-  html {
+  html,
+  body {
     scroll-behavior: auto;
+    transition: none !important;
   }
 
   *,
@@ -84,18 +136,18 @@ body {
 }
 
 ::selection {
-  background-color: var(--ink);
-  color: var(--paper);
+  background-color: var(--foreground);
+  color: var(--background);
 }
 
-/* Spectrum Gradient Utility */
+/* Theme-Aware Spectrum Gradient Utilities */
 .spectrum-gradient-text {
   background: linear-gradient(
     90deg,
-    #1457D9 0%,
-    #18B8D4 38%,
-    #62C94A 68%,
-    #F3D21A 100%
+    var(--blue) 0%,
+    var(--cyan) 38%,
+    var(--green) 68%,
+    var(--yellow) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -105,10 +157,10 @@ body {
 .spectrum-gradient-bg {
   background: linear-gradient(
     90deg,
-    #1457D9 0%,
-    #18B8D4 38%,
-    #62C94A 68%,
-    #F3D21A 100%
+    var(--blue) 0%,
+    var(--cyan) 38%,
+    var(--green) 68%,
+    var(--yellow) 100%
   );
 }
 
@@ -121,7 +173,13 @@ body {
     linear-gradient(to bottom, rgba(207, 207, 196, 0.45) 1px, transparent 1px);
 }
 
+.dark .grid-editorial {
+  background-image: 
+    linear-gradient(to right, rgba(41, 43, 42, 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(41, 43, 42, 0.6) 1px, transparent 1px);
+}
+
 .grid-dots {
   background-size: 20px 20px;
-  background-image: radial-gradient(circle, #6D6D68 1px, transparent 1px);
+  background-image: radial-gradient(circle, var(--muted-foreground) 1px, transparent 1px);
 }

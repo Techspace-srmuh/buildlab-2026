@@ -37,13 +37,13 @@ export function Button({
 
   const variantStyles = {
     primary:
-      "bg-[var(--ink)] text-[var(--paper)] border border-[var(--ink)] hover:bg-[#1a1a1a] shadow-[2px_2px_0px_0px_rgba(0,0,0,0.15)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.25)] hover:-translate-y-0.5",
+      "bg-[var(--foreground)] text-[var(--background)] border border-[var(--foreground)] hover:opacity-90 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.15)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.25)] hover:-translate-y-0.5",
     secondary:
-      "bg-transparent text-[var(--ink)] border border-[var(--ink)] hover:bg-[var(--ink)] hover:text-[var(--paper)] hover:-translate-y-0.5",
+      "bg-transparent text-[var(--foreground)] border border-[var(--foreground)] hover:bg-[var(--foreground)] hover:text-[var(--background)] hover:-translate-y-0.5",
     outline:
-      "bg-transparent text-[var(--ink)] border border-[var(--line)] hover:border-[var(--ink)] hover:-translate-y-0.5",
+      "bg-transparent text-[var(--foreground)] border border-[var(--border)] hover:border-[var(--foreground)] hover:-translate-y-0.5",
     ghost:
-      "bg-transparent text-[var(--ink)] hover:bg-[var(--line)]/30 hover:underline underline-offset-4",
+      "bg-transparent text-[var(--foreground)] hover:bg-[var(--border)]/30 hover:underline underline-offset-4",
   }[variant];
 
   const content = (

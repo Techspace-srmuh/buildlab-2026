@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
 // DEPLOYMENT ASSET NOTE:
@@ -46,7 +47,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F4F4E8",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#F4F4E8" },
+    { media: "(prefers-color-scheme: dark)", color: "#090A0A" },
+  ],
   width: "device-width",
   initialScale: 1,
 };
@@ -58,8 +62,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-sans bg-[var(--paper)] text-[var(--ink)] antialiased min-h-screen selection:bg-[var(--ink)] selection:text-[var(--paper)]">
-        {children}
+      <body className="font-sans bg-[var(--background)] text-[var(--foreground)] antialiased min-h-screen selection:bg-[var(--foreground)] selection:text-[var(--background)]">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange={false}
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

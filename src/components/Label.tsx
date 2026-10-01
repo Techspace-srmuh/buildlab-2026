@@ -23,26 +23,26 @@ export function Label({
 
   switch (variant) {
     case "solid":
-      variantStyles = "bg-[var(--ink)] text-[var(--paper)] font-semibold rounded-[4px]";
+      variantStyles = "bg-[var(--foreground)] text-[var(--background)] font-semibold rounded-[4px]";
       break;
     case "outline":
       variantStyles =
-        "border border-[var(--ink)] text-[var(--ink)] font-semibold rounded-[6px]";
+        "border border-[var(--foreground)] text-[var(--foreground)] font-semibold rounded-[6px]";
       break;
     case "soft-blue":
       variantStyles =
-        "bg-[var(--blue-soft)] text-[var(--blue)] font-semibold border border-[var(--blue)]/20 rounded-[6px]";
+        "bg-[var(--blue-soft)] text-[var(--blue)] font-semibold border border-[var(--blue)]/30 rounded-[6px]";
       break;
     case "soft-green":
       variantStyles =
-        "bg-[var(--green-soft)] text-[#2d731e] font-semibold border border-[var(--green)]/30 rounded-[6px]";
+        "bg-[var(--green-soft)] text-[#206313] dark:text-[var(--green)] font-semibold border border-[var(--green)]/30 rounded-[6px]";
       break;
     case "soft-yellow":
       variantStyles =
-        "bg-[var(--yellow-soft)] text-[#7a6400] font-semibold border border-[var(--yellow)]/40 rounded-[6px]";
+        "bg-[var(--yellow-soft)] text-[#6b5600] dark:text-[var(--yellow)] font-semibold border border-[var(--yellow)]/40 rounded-[6px]";
       break;
     default:
-      variantStyles = "text-[var(--ink)] font-semibold";
+      variantStyles = "text-[var(--foreground)] font-semibold";
   }
 
   return (

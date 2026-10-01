@@ -26,17 +26,17 @@ export function Projects() {
   const hasProjects = PROJECTS.length > 0;
 
   return (
-    <Section id="projects" className="bg-[var(--paper)]">
+    <Section id="projects" className="bg-[var(--background)]">
       <Container>
         {/* Section Header Strip */}
-        <div className="flex items-center justify-between border-b border-[#CFCFC4] pb-3 mb-10 md:mb-14">
+        <div className="flex items-center justify-between border-b border-[var(--border)] pb-3 mb-10 md:mb-14">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-[var(--ink)] inline-block" />
-            <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--ink)]">
+            <span className="w-2 h-2 bg-[var(--foreground)] inline-block" />
+            <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--foreground)]">
               04 / PROJECTS
             </span>
           </div>
-          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.16em] text-[var(--gray)]">
+          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.16em] text-[var(--muted-foreground)]">
             PROJECT CATALOGUE
           </span>
         </div>
@@ -44,23 +44,23 @@ export function Projects() {
         {/* Section Headline & Supporting Copy */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 mb-10 md:mb-14 items-end">
           <div className="lg:col-span-7">
-            <h2 className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-[80px] uppercase tracking-[-0.03em] leading-[0.9] text-[var(--ink)]">
+            <h2 className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-[80px] uppercase tracking-[-0.03em] leading-[0.9] text-[var(--foreground)]">
               WHAT WILL
               <br />
               <span className="spectrum-gradient-text">YOU BUILD?</span>
             </h2>
           </div>
 
-          <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-[#CFCFC4] pt-4 lg:pt-0 lg:pl-8">
-            <p className="font-mono text-[14px] sm:text-[15px] uppercase tracking-wider text-[var(--ink)] leading-relaxed font-medium">
+          <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-[var(--border)] pt-4 lg:pt-0 lg:pl-8">
+            <p className="font-mono text-[14px] sm:text-[15px] uppercase tracking-wider text-[var(--foreground)] leading-relaxed font-medium">
               Explore the projects available for BuildLab ’26.
             </p>
           </div>
         </div>
 
         {/* Filter Navigation Bar (Keyboard accessible) */}
-        <div className="flex flex-wrap items-center gap-2.5 mb-10 pb-4 border-b border-[#CFCFC4]">
-          <span className="font-mono text-[11px] uppercase tracking-widest text-[var(--gray)] font-semibold mr-2 hidden sm:inline-block">
+        <div className="flex flex-wrap items-center gap-2.5 mb-10 pb-4 border-b border-[var(--border)]">
+          <span className="font-mono text-[11px] uppercase tracking-widest text-[var(--muted-foreground)] font-semibold mr-2 hidden sm:inline-block">
             FILTER TRACK:
           </span>
 
@@ -72,10 +72,10 @@ export function Projects() {
                 type="button"
                 onClick={() => setSelectedTrack(filter.id)}
                 aria-pressed={isActive}
-                className={`font-mono text-[12px] md:text-[13px] uppercase tracking-widest px-4 py-2 rounded-[6px] transition-all duration-200 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ink)] ${
+                className={`font-mono text-[12px] md:text-[13px] uppercase tracking-widest px-4 py-2 rounded-[6px] transition-all duration-200 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--foreground)] ${
                   isActive
-                    ? "bg-[var(--ink)] text-[var(--paper)] font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,0.15)]"
-                    : "bg-transparent text-[var(--ink)] border border-[#CFCFC4] hover:border-[var(--ink)] font-medium"
+                    ? "bg-[var(--foreground)] text-[var(--background)] font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,0.15)]"
+                    : "bg-transparent text-[var(--foreground)] border border-[var(--border)] hover:border-[var(--foreground)] font-medium"
                 }`}
               >
                 {filter.label}
@@ -107,42 +107,42 @@ export function Projects() {
               bodyClassName="p-8 sm:p-12 md:p-16 flex flex-col items-center justify-center text-center"
             >
               {/* Geometric Dotted Matrix Icon Accent */}
-              <div className="w-16 h-16 rounded-[12px] border border-[var(--ink)] bg-[#EBEBE0]/60 flex items-center justify-center mb-6 shadow-[2px_2px_0px_0px_rgba(8,8,8,0.1)]">
+              <div className="w-16 h-16 rounded-[12px] border border-[var(--border)] bg-[var(--surface-muted)] flex items-center justify-center mb-6 shadow-[2px_2px_0px_0px_rgba(8,8,8,0.1)] dark:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)]">
                 <div className="grid grid-cols-3 gap-1.5 p-2">
-                  <span className="w-2 h-2 rounded-full bg-[#1457D9]" />
-                  <span className="w-2 h-2 rounded-full bg-[#18B8D4]" />
-                  <span className="w-2 h-2 rounded-full bg-[#62C94A]" />
-                  <span className="w-2 h-2 rounded-full bg-[#F3D21A]" />
-                  <span className="w-2 h-2 rounded-full bg-[var(--ink)]" />
-                  <span className="w-2 h-2 rounded-full bg-[#1457D9]" />
-                  <span className="w-2 h-2 rounded-full bg-[#18B8D4]" />
-                  <span className="w-2 h-2 rounded-full bg-[#62C94A]" />
-                  <span className="w-2 h-2 rounded-full bg-[#F3D21A]" />
+                  <span className="w-2 h-2 rounded-full bg-[var(--blue)]" />
+                  <span className="w-2 h-2 rounded-full bg-[var(--cyan)]" />
+                  <span className="w-2 h-2 rounded-full bg-[var(--green)]" />
+                  <span className="w-2 h-2 rounded-full bg-[var(--yellow)]" />
+                  <span className="w-2 h-2 rounded-full bg-[var(--foreground)]" />
+                  <span className="w-2 h-2 rounded-full bg-[var(--blue)]" />
+                  <span className="w-2 h-2 rounded-full bg-[var(--cyan)]" />
+                  <span className="w-2 h-2 rounded-full bg-[var(--green)]" />
+                  <span className="w-2 h-2 rounded-full bg-[var(--yellow)]" />
                 </div>
               </div>
 
               {/* Dominant Editorial Heading */}
-              <h3 className="font-display font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-[-0.02em] text-[var(--ink)] leading-tight mb-3">
+              <h3 className="font-display font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-[-0.02em] text-[var(--foreground)] leading-tight mb-3">
                 PROJECT CATALOGUE
                 <br />
-                <span className="text-[var(--gray)]">COMING SOON</span>
+                <span className="text-[var(--muted-foreground)]">COMING SOON</span>
               </h3>
 
               {/* Exact Confirmed Message */}
-              <p className="font-sans text-[15px] sm:text-[17px] text-[var(--ink)]/80 max-w-lg leading-relaxed mb-8">
+              <p className="font-sans text-[15px] sm:text-[17px] text-[var(--foreground)]/80 max-w-lg leading-relaxed mb-8">
                 The BuildLab project catalogue will appear here once the official project list is
                 published.
               </p>
 
               {/* Status Indicator Badges */}
-              <div className="flex flex-wrap items-center justify-center gap-3 pt-6 border-t border-[#CFCFC4] w-full max-w-md font-mono text-[11px]">
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-[6px] border border-[#CFCFC4] bg-[var(--paper)]">
-                  <span className="w-2 h-2 rounded-full bg-[#18B8D4] animate-pulse" />
-                  <span className="text-[var(--ink)] font-semibold uppercase">
+              <div className="flex flex-wrap items-center justify-center gap-3 pt-6 border-t border-[var(--border)] w-full max-w-md font-mono text-[11px]">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-[6px] border border-[var(--border)] bg-[var(--surface-card)]">
+                  <span className="w-2 h-2 rounded-full bg-[var(--cyan)] animate-pulse" />
+                  <span className="text-[var(--foreground)] font-semibold uppercase">
                     STATUS: CURATION IN PROGRESS
                   </span>
                 </div>
-                <div className="px-3 py-1.5 rounded-[6px] border border-[#CFCFC4] bg-[var(--paper)] text-[var(--gray)] uppercase">
+                <div className="px-3 py-1.5 rounded-[6px] border border-[var(--border)] bg-[var(--surface-card)] text-[var(--muted-foreground)] uppercase">
                   RELEASE: INAUGURATION DAY
                 </div>
               </div>

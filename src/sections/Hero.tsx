@@ -60,24 +60,24 @@ export function Hero() {
   };
 
   return (
-    <section className="relative w-full border-b border-[#CFCFC4] overflow-hidden bg-[var(--paper)]">
+    <section className="relative w-full border-b border-[var(--border)] overflow-hidden bg-[var(--background)]">
       {/* Background subtle editorial grid lines */}
       <div className="absolute inset-0 grid-editorial pointer-events-none opacity-30" />
 
       {/* Hero Header Technical Strip */}
-      <div className="border-b border-[#CFCFC4] py-2.5 relative z-10 bg-[var(--paper)]/80">
+      <div className="border-b border-[var(--border)] py-2.5 relative z-10 bg-[var(--surface-muted)]/70">
         <Container>
-          <div className="flex items-center justify-between font-mono text-[11px] md:text-[12px] uppercase text-[var(--gray)] tracking-[0.16em]">
+          <div className="flex items-center justify-between font-mono text-[11px] md:text-[12px] uppercase text-[var(--muted-foreground)] tracking-[0.16em]">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-[#1457D9] inline-block" />
-              <span className="text-[var(--ink)] font-semibold">TECHSPACE</span>
-              <span className="text-[#CFCFC4]">/</span>
+              <span className="w-2 h-2 bg-[var(--blue)] inline-block" />
+              <span className="text-[var(--foreground)] font-semibold">TECHSPACE</span>
+              <span className="text-[var(--border)]">/</span>
               <span>SRM UNIVERSITY SONEPAT</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="hidden sm:inline-block">PROGRAM IDENTITY</span>
-              <span className="text-[#CFCFC4] hidden sm:inline-block">/</span>
-              <span className="text-[var(--ink)] font-semibold">01 // BUILD</span>
+              <span className="text-[var(--border)] hidden sm:inline-block">/</span>
+              <span className="text-[var(--foreground)] font-semibold">01 // BUILD</span>
             </div>
           </div>
         </Container>
@@ -99,15 +99,15 @@ export function Hero() {
                 <Label variant="solid" size="sm">
                   PILOT COHORT ’26
                 </Label>
-                <span className="text-[#CFCFC4] font-mono text-xs">/</span>
-                <span className="font-mono text-[12px] md:text-[13px] tracking-wider text-[var(--gray)] uppercase font-semibold">
+                <span className="text-[var(--border)] font-mono text-xs">/</span>
+                <span className="font-mono text-[12px] md:text-[13px] tracking-wider text-[var(--muted-foreground)] uppercase font-semibold">
                   THREE-WEEK PROJECT-BASED LEARNING COMPETITION
                 </span>
               </motion.div>
 
               {/* Dominating Display Typography */}
               <motion.div variants={itemVariants} className="mb-5 md:mb-6">
-                <h1 className="font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-[104px] xl:text-[118px] uppercase tracking-[-0.03em] leading-[0.88] text-[var(--ink)]">
+                <h1 className="font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-[104px] xl:text-[118px] uppercase tracking-[-0.03em] leading-[0.88] text-[var(--foreground)]">
                   BUILD
                   <br />
                   <span className="spectrum-gradient-text">LAB ’26</span>
@@ -117,12 +117,12 @@ export function Hero() {
               {/* Tagline / Subtitle */}
               <motion.div variants={itemVariants} className="space-y-3 mb-8 max-w-xl">
                 <div className="flex items-center gap-3">
-                  <div className="h-[2px] w-8 bg-[var(--ink)]" />
-                  <h2 className="font-mono font-bold text-lg md:text-xl lg:text-2xl uppercase tracking-[0.1em] text-[var(--ink)]">
+                  <div className="h-[2px] w-8 bg-[var(--foreground)]" />
+                  <h2 className="font-mono font-bold text-lg md:text-xl lg:text-2xl uppercase tracking-[0.1em] text-[var(--foreground)]">
                     LEARN BY BUILDING.
                   </h2>
                 </div>
-                <p className="text-[15px] md:text-[17px] text-[var(--ink)]/85 leading-relaxed font-normal">
+                <p className="text-[15px] md:text-[17px] text-[var(--foreground)]/85 leading-relaxed font-normal">
                   Turn ideas into production software through GitHub, structured PRD development,
                   peer code reviews, and active mentorship across a three-week engineering sprint.
                 </p>
@@ -131,29 +131,29 @@ export function Hero() {
               {/* Verified Program Specs Row */}
               <motion.div
                 variants={itemVariants}
-                className="grid grid-cols-2 sm:grid-cols-3 gap-3 py-4 my-2 border-y border-[#CFCFC4] font-mono"
+                className="grid grid-cols-2 sm:grid-cols-3 gap-3 py-4 my-2 border-y border-[var(--border)] font-mono"
               >
                 <div>
-                  <span className="block text-[10px] text-[var(--gray)] uppercase tracking-widest">
+                  <span className="block text-[10px] text-[var(--muted-foreground)] uppercase tracking-widest">
                     DATES
                   </span>
-                  <span className="font-bold text-[13px] md:text-[14px] text-[var(--ink)] tracking-tight">
+                  <span className="font-bold text-[13px] md:text-[14px] text-[var(--foreground)] tracking-tight">
                     05 OCT — 23 OCT 2026
                   </span>
                 </div>
                 <div>
-                  <span className="block text-[10px] text-[var(--gray)] uppercase tracking-widest">
+                  <span className="block text-[10px] text-[var(--muted-foreground)] uppercase tracking-widest">
                     INAUGURATION
                   </span>
-                  <span className="font-bold text-[13px] md:text-[14px] text-[var(--ink)] tracking-tight">
+                  <span className="font-bold text-[13px] md:text-[14px] text-[var(--foreground)] tracking-tight">
                     05 OCT · 10:30 AM (EB)
                   </span>
                 </div>
                 <div className="col-span-2 sm:col-span-1">
-                  <span className="block text-[10px] text-[var(--gray)] uppercase tracking-widest">
+                  <span className="block text-[10px] text-[var(--muted-foreground)] uppercase tracking-widest">
                     FORMAT & VENUE
                   </span>
-                  <span className="font-bold text-[13px] md:text-[14px] text-[var(--ink)] tracking-tight">
+                  <span className="font-bold text-[13px] md:text-[14px] text-[var(--foreground)] tracking-tight">
                     5TH FL, CONF ROOM, EB
                   </span>
                 </div>
@@ -202,10 +202,10 @@ export function Hero() {
                 <ScientificGraphic variant="hero-composition" className="w-full" />
 
                 {/* Laboratory Metric Readout Footer Inside Container */}
-                <div className="w-full mt-4 pt-3.5 border-t border-[#CFCFC4] flex items-center justify-between font-mono text-[11px] text-[var(--gray)]">
+                <div className="w-full mt-4 pt-3.5 border-t border-[var(--border)] flex items-center justify-between font-mono text-[11px] text-[var(--muted-foreground)]">
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#18B8D4]" />
-                    <span className="uppercase text-[var(--ink)] font-semibold">
+                    <span className="w-2 h-2 rounded-full bg-[var(--cyan)]" />
+                    <span className="uppercase text-[var(--foreground)] font-semibold">
                       METHOD: PRD → MERGE
                     </span>
                   </div>
@@ -220,41 +220,41 @@ export function Hero() {
       </div>
 
       {/* Editorial Bottom Info Strip (Swiss Poster Reference Footnote Grid) */}
-      <div className="border-t border-[#CFCFC4] bg-[#EBEBE0]/50 py-4 font-mono">
+      <div className="border-t border-[var(--border)] bg-[var(--surface-muted)] py-4 font-mono">
         <Container>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-[11px] md:text-[12px]">
-            <div className="border-l-2 border-[#1457D9] pl-3">
-              <span className="block text-[var(--gray)] uppercase tracking-wider text-[10px]">
+            <div className="border-l-2 border-[var(--blue)] pl-3">
+              <span className="block text-[var(--muted-foreground)] uppercase tracking-wider text-[10px]">
                 01 / TRACKS
               </span>
-              <span className="font-semibold text-[var(--ink)]">
+              <span className="font-semibold text-[var(--foreground)]">
                 Beginner · Intermediate · Advanced
               </span>
             </div>
 
-            <div className="border-l-2 border-[#18B8D4] pl-3">
-              <span className="block text-[var(--gray)] uppercase tracking-wider text-[10px]">
+            <div className="border-l-2 border-[var(--cyan)] pl-3">
+              <span className="block text-[var(--muted-foreground)] uppercase tracking-wider text-[10px]">
                 02 / WORKFLOW
               </span>
-              <span className="font-semibold text-[var(--ink)]">
+              <span className="font-semibold text-[var(--foreground)]">
                 Issue → Branch → PR → Code Review
               </span>
             </div>
 
-            <div className="border-l-2 border-[#62C94A] pl-3">
-              <span className="block text-[var(--gray)] uppercase tracking-wider text-[10px]">
+            <div className="border-l-2 border-[var(--green)] pl-3">
+              <span className="block text-[var(--muted-foreground)] uppercase tracking-wider text-[10px]">
                 03 / PLATFORMS
               </span>
-              <span className="font-semibold text-[var(--ink)]">
+              <span className="font-semibold text-[var(--foreground)]">
                 GitHub Org + Discord Community
               </span>
             </div>
 
-            <div className="border-l-2 border-[#F3D21A] pl-3">
-              <span className="block text-[var(--gray)] uppercase tracking-wider text-[10px]">
+            <div className="border-l-2 border-[var(--yellow)] pl-3">
+              <span className="block text-[var(--muted-foreground)] uppercase tracking-wider text-[10px]">
                 04 / RECOGNITION
               </span>
-              <span className="font-semibold text-[var(--ink)]">
+              <span className="font-semibold text-[var(--foreground)]">
                 ₹3,000 Cash Pool + Certificates
               </span>
             </div>

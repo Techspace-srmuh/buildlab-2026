@@ -22,10 +22,10 @@ export function MentorCard({ mentor, index }: MentorCardProps) {
   return (
     <div
       tabIndex={0}
-      className="group relative flex flex-col justify-between border border-[#CFCFC4] rounded-[18px] bg-[var(--paper)] overflow-hidden transition-all duration-300 hover:border-[var(--ink)] hover:shadow-[4px_4px_0px_0px_rgba(8,8,8,0.1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ink)]"
+      className="group relative flex flex-col justify-between border border-[var(--border)] rounded-[18px] bg-[var(--surface-card)] overflow-hidden transition-all duration-300 hover:border-[var(--foreground)] hover:shadow-[4px_4px_0px_0px_var(--border)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--foreground)]"
     >
       {/* Mentor Portrait Area */}
-      <div className="relative aspect-[4/4.5] w-full bg-[#EBEBE0] overflow-hidden border-b border-[#CFCFC4]">
+      <div className="relative aspect-[4/4.5] w-full bg-[var(--surface-muted)] overflow-hidden border-b border-[var(--border)]">
         {mentor.image ? (
           <Image
             src={mentor.image}
@@ -36,8 +36,8 @@ export function MentorCard({ mentor, index }: MentorCardProps) {
           />
         ) : (
           /* Geometric Fallback Portrait Silhouette */
-          <div className="w-full h-full flex flex-col items-center justify-center p-6 text-[var(--gray)] select-none">
-            <div className="w-20 h-20 rounded-full border border-[#CFCFC4] bg-[var(--paper)] flex items-center justify-center font-display font-black text-2xl text-[var(--ink)] mb-3">
+          <div className="w-full h-full flex flex-col items-center justify-center p-6 text-[var(--muted-foreground)] select-none">
+            <div className="w-20 h-20 rounded-full border border-[var(--border)] bg-[var(--background)] flex items-center justify-center font-display font-black text-2xl text-[var(--foreground)] mb-3">
               {mentor.name
                 .split(" ")
                 .map((n) => n[0])
@@ -45,7 +45,7 @@ export function MentorCard({ mentor, index }: MentorCardProps) {
                 .slice(0, 2)
                 .toUpperCase() || "BL"}
             </div>
-            <span className="font-mono text-[10px] uppercase tracking-widest text-[var(--gray)]">
+            <span className="font-mono text-[10px] uppercase tracking-widest text-[var(--muted-foreground)]">
               PORTRAIT VERIFIED
             </span>
           </div>
@@ -65,27 +65,27 @@ export function MentorCard({ mentor, index }: MentorCardProps) {
       <div className="p-6 flex flex-col flex-1 justify-between">
         <div>
           {/* Index & Header */}
-          <div className="flex items-center justify-between pb-2 mb-3 border-b border-[#CFCFC4]/60">
-            <span className="font-mono text-[10px] font-bold tracking-widest text-[var(--gray)] uppercase">
+          <div className="flex items-center justify-between pb-2 mb-3 border-b border-[var(--border)]">
+            <span className="font-mono text-[10px] font-bold tracking-widest text-[var(--muted-foreground)] uppercase">
               MENTOR / {indexFormatted}
             </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--ink)]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--foreground)]" />
           </div>
 
           {/* Name & Role */}
-          <h3 className="font-display font-black text-2xl uppercase tracking-tight text-[var(--ink)] leading-snug mb-1">
+          <h3 className="font-display font-black text-2xl uppercase tracking-tight text-[var(--foreground)] leading-snug mb-1">
             {mentor.name}
           </h3>
 
           {mentor.role && (
-            <p className="font-mono text-[11px] font-semibold text-[var(--gray)] uppercase tracking-wider mb-3">
+            <p className="font-mono text-[11px] font-semibold text-[var(--muted-foreground)] uppercase tracking-wider mb-3">
               {mentor.role}
             </p>
           )}
 
           {/* Bio */}
           {mentor.bio && (
-            <p className="text-[13px] text-[var(--ink)]/85 leading-relaxed font-sans line-clamp-3 mb-4">
+            <p className="text-[13px] text-[var(--foreground)]/85 leading-relaxed font-sans line-clamp-3 mb-4">
               {mentor.bio}
             </p>
           )}
@@ -93,13 +93,13 @@ export function MentorCard({ mentor, index }: MentorCardProps) {
 
         {/* Social Links Footer (Only render if URL exists!) */}
         {(mentor.linkedin || mentor.github) && (
-          <div className="pt-4 mt-2 border-t border-[#CFCFC4] flex items-center gap-4 font-mono text-[11px] uppercase tracking-wider font-bold">
+          <div className="pt-4 mt-2 border-t border-[var(--border)] flex items-center gap-4 font-mono text-[11px] uppercase tracking-wider font-bold">
             {mentor.linkedin && (
               <a
                 href={mentor.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-[var(--ink)] hover:underline underline-offset-4"
+                className="inline-flex items-center gap-1 text-[var(--foreground)] hover:underline underline-offset-4"
               >
                 <span>LINKEDIN</span>
                 <Arrow direction="up-right" className="w-3 h-3" />
@@ -111,7 +111,7 @@ export function MentorCard({ mentor, index }: MentorCardProps) {
                 href={mentor.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-[var(--ink)] hover:underline underline-offset-4"
+                className="inline-flex items-center gap-1 text-[var(--foreground)] hover:underline underline-offset-4"
               >
                 <span>GITHUB</span>
                 <Arrow direction="up-right" className="w-3 h-3" />

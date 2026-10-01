@@ -15,17 +15,17 @@ export function Mentors() {
   const hasMentors = MENTORS.length > 0;
 
   return (
-    <Section id="mentors" className="bg-[var(--paper)]">
+    <Section id="mentors" className="bg-[var(--background)]">
       <Container>
         {/* Section Header Strip */}
-        <div className="flex items-center justify-between border-b border-[#CFCFC4] pb-3 mb-10 md:mb-14">
+        <div className="flex items-center justify-between border-b border-[var(--border)] pb-3 mb-10 md:mb-14">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-[var(--ink)] inline-block" />
-            <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--ink)]">
+            <span className="w-2 h-2 bg-[var(--foreground)] inline-block" />
+            <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--foreground)]">
               05 / MENTORS
             </span>
           </div>
-          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.16em] text-[var(--gray)]">
+          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.16em] text-[var(--muted-foreground)]">
             PROGRAM GUIDANCE
           </span>
         </div>
@@ -33,15 +33,15 @@ export function Mentors() {
         {/* Section Headline & Supporting Copy */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 mb-12 md:mb-16 items-end">
           <div className="lg:col-span-7">
-            <h2 className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-[80px] uppercase tracking-[-0.03em] leading-[0.9] text-[var(--ink)]">
+            <h2 className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-[80px] uppercase tracking-[-0.03em] leading-[0.9] text-[var(--foreground)]">
               BUILD
               <br />
               <span className="spectrum-gradient-text">TOGETHER.</span>
             </h2>
           </div>
 
-          <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-[#CFCFC4] pt-4 lg:pt-0 lg:pl-8">
-            <p className="font-mono text-[14px] sm:text-[15px] uppercase tracking-wider text-[var(--ink)] leading-relaxed font-medium">
+          <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-[var(--border)] pt-4 lg:pt-0 lg:pl-8">
+            <p className="font-mono text-[14px] sm:text-[15px] uppercase tracking-wider text-[var(--foreground)] leading-relaxed font-medium">
               People who help turn ideas into working projects.
             </p>
           </div>
@@ -81,70 +81,70 @@ export function Mentors() {
               bodyClassName="p-8 sm:p-12 md:p-16 flex flex-col items-center justify-center text-center"
             >
               {/* Geometric Node Icon Motif */}
-              <div className="w-16 h-16 rounded-[12px] border border-[var(--ink)] bg-[#EBEBE0]/60 flex items-center justify-center mb-6 shadow-[2px_2px_0px_0px_rgba(8,8,8,0.1)]">
+              <div className="w-16 h-16 rounded-[12px] border border-[var(--foreground)] bg-[var(--surface-muted)] flex items-center justify-center mb-6 shadow-[2px_2px_0px_0px_var(--border)]">
                 <div className="flex items-center gap-1.5">
-                  <span className="w-3 h-3 rounded-full bg-[#1457D9]" />
-                  <span className="w-3 h-3 rounded-full bg-[#18B8D4]" />
-                  <span className="w-3 h-3 rounded-full bg-[#62C94A]" />
-                  <span className="w-3 h-3 rounded-full bg-[#F3D21A]" />
+                  <span className="w-3 h-3 rounded-full bg-[var(--blue)]" />
+                  <span className="w-3 h-3 rounded-full bg-[var(--cyan)]" />
+                  <span className="w-3 h-3 rounded-full bg-[var(--green)]" />
+                  <span className="w-3 h-3 rounded-full bg-[var(--yellow)]" />
                 </div>
               </div>
 
               {/* Dominant Editorial Heading */}
-              <h3 className="font-display font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-[-0.02em] text-[var(--ink)] leading-tight mb-3">
+              <h3 className="font-display font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-[-0.02em] text-[var(--foreground)] leading-tight mb-3">
                 MENTOR ROSTER
                 <br />
-                <span className="text-[var(--gray)]">COMING SOON</span>
+                <span className="text-[var(--muted-foreground)]">COMING SOON</span>
               </h3>
 
               {/* Exact Confirmed Message */}
-              <p className="font-sans text-[15px] sm:text-[17px] text-[var(--ink)]/80 max-w-lg leading-relaxed mb-8">
+              <p className="font-sans text-[15px] sm:text-[17px] text-[var(--foreground)]/80 max-w-lg leading-relaxed mb-8">
                 Meet the mentors supporting BuildLab ’26.
               </p>
 
               {/* Confirmed Program Personnel Roles (Green Sheet Requirements) */}
-              <div className="w-full max-w-2xl pt-8 border-t border-[#CFCFC4] grid grid-cols-1 sm:grid-cols-3 gap-4 text-left font-mono text-[11px]">
-                <div className="p-3.5 border border-[#CFCFC4] rounded-[8px] bg-[var(--paper)]">
-                  <span className="block text-[var(--gray)] text-[10px] uppercase tracking-wider mb-1">
+              <div className="w-full max-w-2xl pt-8 border-t border-[var(--border)] grid grid-cols-1 sm:grid-cols-3 gap-4 text-left font-mono text-[11px]">
+                <div className="p-3.5 border border-[var(--border)] rounded-[8px] bg-[var(--surface-card)]">
+                  <span className="block text-[var(--muted-foreground)] text-[10px] uppercase tracking-wider mb-1">
                     ROLE 01
                   </span>
-                  <span className="font-bold text-[var(--ink)] uppercase block">
+                  <span className="font-bold text-[var(--foreground)] uppercase block">
                     TRACK MENTORS
                   </span>
-                  <span className="text-[var(--gray)] text-[10px] block mt-1">
+                  <span className="text-[var(--muted-foreground)] text-[10px] block mt-1">
                     PR reviews & architecture guidance
                   </span>
                 </div>
 
-                <div className="p-3.5 border border-[#CFCFC4] rounded-[8px] bg-[var(--paper)]">
-                  <span className="block text-[var(--gray)] text-[10px] uppercase tracking-wider mb-1">
+                <div className="p-3.5 border border-[var(--border)] rounded-[8px] bg-[var(--surface-card)]">
+                  <span className="block text-[var(--muted-foreground)] text-[10px] uppercase tracking-wider mb-1">
                     ROLE 02
                   </span>
-                  <span className="font-bold text-[var(--ink)] uppercase block">
+                  <span className="font-bold text-[var(--foreground)] uppercase block">
                     EVALUATION PANEL
                   </span>
-                  <span className="text-[var(--gray)] text-[10px] block mt-1">
+                  <span className="text-[var(--muted-foreground)] text-[10px] block mt-1">
                     Live demo scoring & rubric evaluation
                   </span>
                 </div>
 
-                <div className="p-3.5 border border-[#CFCFC4] rounded-[8px] bg-[var(--paper)]">
-                  <span className="block text-[var(--gray)] text-[10px] uppercase tracking-wider mb-1">
+                <div className="p-3.5 border border-[var(--border)] rounded-[8px] bg-[var(--surface-card)]">
+                  <span className="block text-[var(--muted-foreground)] text-[10px] uppercase tracking-wider mb-1">
                     ROLE 03
                   </span>
-                  <span className="font-bold text-[var(--ink)] uppercase block">
+                  <span className="font-bold text-[var(--foreground)] uppercase block">
                     FACULTY COORDINATOR
                   </span>
-                  <span className="text-[var(--gray)] text-[10px] block mt-1">
+                  <span className="text-[var(--muted-foreground)] text-[10px] block mt-1">
                     SRM University academic coordination
                   </span>
                 </div>
               </div>
 
               {/* Status Pill Badge */}
-              <div className="mt-6 font-mono text-[11px] text-[var(--gray)] flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#62C94A] animate-pulse" />
-                <span className="uppercase font-semibold text-[var(--ink)]">
+              <div className="mt-6 font-mono text-[11px] text-[var(--muted-foreground)] flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[var(--green)] animate-pulse" />
+                <span className="uppercase font-semibold text-[var(--foreground)]">
                   OFFICIAL ROSTER RELEASE PRIOR TO LAUNCH
                 </span>
               </div>
