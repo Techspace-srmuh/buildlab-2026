@@ -1,65 +1,47 @@
 export interface Track {
   id: string;
+  number: string;
   name: string;
-  tagline: string;
-  teamSize: string;
-  targetAudience: string;
-  description: string;
-  accentColor: string;
-  softColor: string;
-  requirements: string[];
+  format: string;
+  teamSize?: string;
+  accent: "blue" | "green" | "yellow";
+  accentHex: string;
+  softHex: string;
+  symbol: string;
 }
 
 export const TRACKS: Track[] = [
   {
     id: "beginner",
+    number: "01",
     name: "Beginner",
-    tagline: "SOLO",
+    format: "Solo",
     teamSize: "1 Member",
-    targetAudience: "New to Git/GitHub or building first complete project",
-    description:
-      "Small, well-scoped projects that demonstrate a clean working solution with thorough documentation and fundamental version control workflows.",
-    accentColor: "#1457D9",
-    softColor: "#DCEBFF",
-    requirements: [
-      "Individual project delivery",
-      "Git fundamentals & clean commit history",
-      "Comprehensive README and setup instructions",
-      "Working prototype with core features implemented",
-    ],
+    accent: "blue",
+    accentHex: "#1457D9",
+    softHex: "#DCEBFF",
+    symbol: "MOL-01",
   },
   {
     id: "intermediate",
+    number: "02",
     name: "Intermediate",
-    tagline: "DUO",
+    format: "Duo",
     teamSize: "2 Members",
-    targetAudience: "Prior project experience and working knowledge of Git",
-    description:
-      "Multi-feature systems demonstrating effective work division, branch management, Pull Requests, and peer code reviews before mentor merging.",
-    accentColor: "#62C94A",
-    softColor: "#E5F4D8",
-    requirements: [
-      "Collaborative 2-person engineering",
-      "Feature branching & pull request workflow",
-      "Peer review on all merged changes",
-      "Robust state management and API integration",
-    ],
+    accent: "green",
+    accentHex: "#62C94A",
+    softHex: "#E5F4D8",
+    symbol: "LATTICE-02",
   },
   {
     id: "advanced",
+    number: "03",
     name: "Advanced",
-    tagline: "SQUAD",
+    format: "Squad",
     teamSize: "3–4 Members",
-    targetAudience: "Strong fundamentals, solid system design and team workflow",
-    description:
-      "Technically ambitious, production-grade applications with modular architecture, strict PRD milestones, CI automation, and stretch deliverables.",
-    accentColor: "#F3D21A",
-    softColor: "#FFF3B8",
-    requirements: [
-      "Squad collaboration (3–4 engineers)",
-      "Strict PRD milestone adherence",
-      "Automated testing and CI/CD validation",
-      "Ambitious technical complexity & stretch goals",
-    ],
+    accent: "yellow",
+    accentHex: "#F3D21A",
+    softHex: "#FFF3B8",
+    symbol: "POLYHEDRON-03",
   },
 ];

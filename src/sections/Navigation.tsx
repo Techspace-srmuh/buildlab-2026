@@ -26,9 +26,10 @@ export function Navigation() {
   const navLinks = [
     { name: "About", href: LINKS.explore },
     { name: "Tracks", href: LINKS.tracks },
+    { name: "Timeline", href: LINKS.timeline },
     { name: "Projects", href: LINKS.projects },
     { name: "Mentors", href: LINKS.mentors },
-    { name: "Timeline", href: LINKS.timeline },
+    { name: "Community", href: LINKS.discordGuide },
   ];
 
   return (
@@ -58,7 +59,7 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-7 lg:gap-9">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -73,12 +74,12 @@ export function Navigation() {
           {/* Action / Discord CTA Button */}
           <div className="hidden md:flex items-center gap-3">
             <Button
-              href={LINKS.discord}
-              target="_blank"
+              href={LINKS.discord || LINKS.discordGuide}
+              target={LINKS.discord ? "_blank" : undefined}
               size="sm"
               variant="primary"
               withArrow
-              arrowDirection="up-right"
+              arrowDirection={LINKS.discord ? "up-right" : "right"}
             >
               JOIN DISCORD
             </Button>
@@ -128,13 +129,14 @@ export function Navigation() {
             </nav>
             <div className="pt-2">
               <Button
-                href={LINKS.discord}
-                target="_blank"
+                href={LINKS.discord || LINKS.discordGuide}
+                target={LINKS.discord ? "_blank" : undefined}
                 size="md"
                 variant="primary"
                 withArrow
-                arrowDirection="up-right"
+                arrowDirection={LINKS.discord ? "up-right" : "right"}
                 className="w-full"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 JOIN DISCORD
               </Button>

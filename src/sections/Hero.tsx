@@ -100,8 +100,8 @@ export function Hero() {
                   PILOT COHORT ’26
                 </Label>
                 <span className="text-[#CFCFC4] font-mono text-xs">/</span>
-                <span className="font-mono text-[12px] md:text-[13px] tracking-wider text-[var(--gray)] uppercase font-medium">
-                  2-WEEK PROJECT-BASED PROGRAM
+                <span className="font-mono text-[12px] md:text-[13px] tracking-wider text-[var(--gray)] uppercase font-semibold">
+                  THREE-WEEK PROJECT-BASED LEARNING COMPETITION
                 </span>
               </motion.div>
 
@@ -124,7 +124,7 @@ export function Hero() {
                 </div>
                 <p className="text-[15px] md:text-[17px] text-[var(--ink)]/85 leading-relaxed font-normal">
                   Turn ideas into production software through GitHub, structured PRD development,
-                  peer code reviews, and active engineering mentorship.
+                  peer code reviews, and active mentorship across a three-week engineering sprint.
                 </p>
               </motion.div>
 
@@ -138,23 +138,23 @@ export function Hero() {
                     DATES
                   </span>
                   <span className="font-bold text-[13px] md:text-[14px] text-[var(--ink)] tracking-tight">
-                    01 OCT — 15 OCT
+                    05 OCT — 23 OCT 2026
                   </span>
                 </div>
                 <div>
                   <span className="block text-[10px] text-[var(--gray)] uppercase tracking-widest">
-                    KICK-OFF
+                    INAUGURATION
                   </span>
                   <span className="font-bold text-[13px] md:text-[14px] text-[var(--ink)] tracking-tight">
-                    10:30 AM · NANDI HALL
+                    05 OCT · 10:30 AM (EB)
                   </span>
                 </div>
                 <div className="col-span-2 sm:col-span-1">
                   <span className="block text-[10px] text-[var(--gray)] uppercase tracking-widest">
-                    FORMAT
+                    FORMAT & VENUE
                   </span>
                   <span className="font-bold text-[13px] md:text-[14px] text-[var(--ink)] tracking-tight">
-                    SOLO · DUO · SQUAD
+                    5TH FL, CONF ROOM, EB
                   </span>
                 </div>
               </motion.div>

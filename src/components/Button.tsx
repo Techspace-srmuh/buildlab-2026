@@ -57,7 +57,9 @@ export function Button({
     </>
   );
 
-  if (href) {
+  const disabledStyles = "opacity-50 cursor-not-allowed pointer-events-none shadow-none hover:translate-y-0";
+
+  if (href && !props.disabled) {
     const isExternal = href.startsWith("http") || target === "_blank";
     return (
       <Link
@@ -73,7 +75,9 @@ export function Button({
 
   return (
     <button
-      className={`${baseStyles} ${sizeStyles} ${variantStyles} ${className}`}
+      className={`${baseStyles} ${sizeStyles} ${variantStyles} ${
+        props.disabled ? disabledStyles : ""
+      } ${className}`}
       {...props}
     >
       {content}

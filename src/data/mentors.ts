@@ -1,40 +1,17 @@
+export type MentorTrack = "Beginner" | "Intermediate" | "Advanced" | "Cross-Track";
+
 export interface Mentor {
   id: string;
   name: string;
-  role: string;
-  track: "Beginner" | "Intermediate" | "Advanced" | "Cross-Track";
-  bio: string;
+  role?: string;
+  track?: MentorTrack;
+  bio?: string;
   image?: string;
-  github?: string;
   linkedin?: string;
-  isConfirmed: boolean;
+  github?: string;
 }
 
-// Mentor roster will be officially announced prior to inauguration.
-// Configured with explicit placeholders per the proposal.
-export const MENTORS: Mentor[] = [
-  {
-    id: "mentor-placeholder-1",
-    name: "To Be Announced",
-    role: "Beginner Track Lead",
-    track: "Beginner",
-    bio: "Technical guidance on Git workflows, repository hygiene, and core prototype development.",
-    isConfirmed: false,
-  },
-  {
-    id: "mentor-placeholder-2",
-    name: "To Be Announced",
-    role: "Intermediate Track Lead",
-    track: "Intermediate",
-    bio: "Architecture consulting, Pull Request reviews, and cross-team branch synchronization.",
-    isConfirmed: false,
-  },
-  {
-    id: "mentor-placeholder-3",
-    name: "To Be Announced",
-    role: "Advanced Track Lead",
-    track: "Advanced",
-    bio: "Scalable system design, automated testing pipelines, and technical complexity review.",
-    isConfirmed: false,
-  },
-];
+// The approved Green Sheet confirms mentors, an evaluation panel, and a Faculty Coordinator.
+// Official roster names, photographs, and social links are pending announcement prior to launch.
+// Kept as an empty array to render the verified pre-launch state.
+export const MENTORS: Mentor[] = [];
