@@ -1,0 +1,550 @@
+For the landing website, **you should have Antigravity build it** in the `techspace` GitHub organization repo. You can give it the full website brief below. The content should be based on the approved BuildLab proposal; it specifies the two-week format, three tracks, GitHub/Discord workflow, mentorship, ₹3,000 total cash prizes, and the timeline.
+
+One important point: **mentor names/photos/LinkedIn/GitHub and the project catalogue aren't finalized in the proposal**, so those should be structured as content/data that you can fill in later rather than invented. The proposal explicitly lists the mentor roster as something to finalize before launch.
+
+## README.md
+
+Use this as the repository README:
+
+````md
+# TechSpace BuildLab '26
+
+> **Learn by Building.**
+
+Official landing website for **TechSpace BuildLab '26** — a two-week,
+mentor-supported, project-based learning program by TechSpace, SRM University,
+Sonepat.
+
+BuildLab is designed around one simple idea:
+
+**Learn by building real projects.**
+
+Participants choose a track, select or propose a project, write a PRD,
+receive mentor approval, and build using a professional GitHub workflow with
+Issues, Branches, Pull Requests and Code Reviews.
+
+---
+
+## About BuildLab
+
+TechSpace BuildLab '26 is a project-based learning pilot for SRM University
+students from the 1st to 3rd year.
+
+The program begins with an in-person inauguration and then continues online
+through GitHub and Discord.
+
+### Program
+
+| | Details |
+|---|---|
+| Organizer | TechSpace, SRM University, Sonepat |
+| Format | Project-based + mentor-supported |
+| Duration | 1 October – 15 October 2026 |
+| Duration | 2 weeks |
+| Inauguration | 1 October 2026, 10:30 AM |
+| Venue | Nandi Hall |
+| Eligibility | SRM University B.Tech CSE / BCA CS, 1st–3rd year |
+| Platforms | GitHub + Discord |
+| Cohort | Approximately 40–60 participants |
+| Program model | PRD → Mentor Approval → Development → Demo |
+
+---
+
+## Tracks
+
+### Beginner
+
+**Format:** Solo
+
+Designed for students who are new to Git/GitHub or building their first
+complete project.
+
+Projects should be small, well-scoped and demonstrate a working solution
+with clear documentation.
+
+**Team size:** 1
+
+---
+
+### Intermediate
+
+**Format:** Duo
+
+Designed for students with some project experience and working knowledge of
+Git.
+
+Projects should contain multiple features and demonstrate proper division of
+work, Pull Requests and cross-review.
+
+**Team size:** 2
+
+---
+
+### Advanced
+
+**Format:** Squad
+
+Designed for students with strong fundamentals, prior project experience and
+team-workflow knowledge.
+
+Projects are expected to be more complete and technically ambitious, with
+defined team responsibilities and stretch goals.
+
+**Team size:** 3–4
+
+---
+
+## Project Domains
+
+Projects may fall into areas such as:
+
+- Web / Full Stack
+- AI / ML
+- Backend
+- Mobile / App Development
+- Systems / DSA
+- Automation / Developer Tools
+
+A domain is offered where appropriate mentor support is available.
+
+Participants may either:
+
+1. Choose from the BuildLab project catalogue, or
+2. Propose their own project through the PRD process.
+
+---
+
+## How BuildLab Works
+
+```text
+Registration
+     ↓
+Track Selection
+     ↓
+Project Selection / Proposal
+     ↓
+PRD Submission
+     ↓
+Mentor Review
+     ↓
+PRD Approval
+     ↓
+Development
+     ↓
+Testing & Documentation
+     ↓
+Final Submission
+     ↓
+Demo & Evaluation
+     ↓
+Results
+````
+
+### PRD Approval
+
+Every participant or team must submit a Product Requirements Document before
+development begins.
+
+The PRD contains:
+
+* Project title
+* Track
+* Team members
+* Problem statement
+* Target users
+* Core features
+* Stretch features
+* Technology stack
+* Project domain
+* Milestones
+* Success criteria
+* Risks and dependencies
+
+Development begins only after mentor approval.
+
+---
+
+## Development Workflow
+
+BuildLab uses a professional software-development workflow.
+
+```text
+Issue
+  ↓
+Branch
+  ↓
+Development
+  ↓
+Commit
+  ↓
+Pull Request
+  ↓
+Code Review
+  ↓
+Merge
+```
+
+Every approved project receives a repository within the TechSpace GitHub
+Organization.
+
+GitHub is the primary record of project work.
+
+---
+
+## Mentorship
+
+Mentors are assigned by track.
+
+Mentor responsibilities include:
+
+* PRD review and approval
+* Weekly project check-ins
+* Technical guidance
+* Pull Request/code review
+* Project scope guidance
+* Support through Discord
+
+Mentors guide participants toward solutions rather than writing participant
+code.
+
+### Mentor Roster
+
+> Mentor information will be published here once the final roster is
+> confirmed.
+
+Each mentor profile will include:
+
+* Photograph
+* Name
+* Track / responsibility
+* LinkedIn
+* GitHub
+
+---
+
+## Timeline
+
+### Before Day 1
+
+**Registration & Entry Task**
+
+Registration, GitHub entry task, track selection and team formation.
+
+---
+
+### 1 October
+
+**Inauguration & Kick-off**
+
+Nandi Hall · 10:30 AM
+
+Program briefing, track walkthrough, rules, PRD process and Discord
+onboarding.
+
+---
+
+### 1–3 October
+
+**PRD Drafting & Submission**
+
+Participants and teams prepare and submit their PRDs.
+
+---
+
+### 3 October
+
+**PRD Approval Deadline**
+
+Mentors review submissions.
+
+Development begins only after approval.
+
+---
+
+### 4–8 October
+
+**Core Development**
+
+Repositories, Issues, Branches and Pull Requests are used to build the
+project's core requirements.
+
+---
+
+### 8 October
+
+**Mid-Program Review**
+
+Progress is checked against approved PRD milestones.
+
+---
+
+### 9–12 October
+
+**Completion, Testing & Documentation**
+
+Teams finish core work, attempt stretch features, test their project and
+complete documentation.
+
+---
+
+### 13 October
+
+**Final Submission**
+
+Repositories are frozen for evaluation.
+
+---
+
+### 14 October
+
+**Demonstrations & Evaluation**
+
+Projects are demonstrated and evaluated against the published rubric.
+
+---
+
+### 15 October
+
+**Results & Closing**
+
+Results are announced and track winners are recognized.
+
+---
+
+## Evaluation
+
+Projects are evaluated using six criteria:
+
+| Criterion                        | Points |
+| -------------------------------- | -----: |
+| Technical Implementation         |     10 |
+| GitHub Workflow & Collaboration  |     10 |
+| Documentation                    |     10 |
+| Innovation / Problem Solving     |     10 |
+| Usability / Developer Experience |     10 |
+| Consistency & Progress           |     10 |
+| **Total**                        | **60** |
+
+Projects are evaluated against their approved PRD.
+
+Evaluation focuses on the quality and authenticity of the work rather than
+simply counting commits.
+
+---
+
+## Prizes & Certificates
+
+There are three track winners.
+
+| Track        |  Prize |
+| ------------ | -----: |
+| Beginner     | ₹1,000 |
+| Intermediate | ₹1,000 |
+| Advanced     | ₹1,000 |
+
+### Certificates
+
+Every participant who:
+
+* has an approved PRD
+* reaches final submission
+* completes the demonstration
+
+receives a completion certificate.
+
+Each track winner also receives a winner certificate.
+
+**Total cash prizes: ₹3,000.**
+
+---
+
+## Discord
+
+Discord is the communication and support layer of BuildLab.
+
+Participants use Discord for:
+
+* Announcements
+* Project discussions
+* Mentor support
+* GitHub help
+* Debugging
+* PRD questions
+* General doubts
+* Track-specific communication
+* Support tickets
+
+### Discord Guide
+
+The website will contain a visual guide explaining:
+
+```text
+📌 INFORMATION
+    Announcements
+    Rules
+    Getting Started
+    FAQ
+
+🧭 BUILDLAB
+    Project Discussion
+    Weekly Updates
+    Submissions
+
+💬 COMMUNITY
+    General
+    Introductions
+
+🛠 SUPPORT
+    Help
+    GitHub Help
+    Debugging
+
+👨‍💻 TRACKS
+    Beginner
+    Intermediate
+    Advanced
+```
+
+Participants should join Discord before beginning their BuildLab journey.
+
+---
+
+## Project Catalogue
+
+The website will provide a browsable catalogue of projects available to
+participants.
+
+Each project card should contain:
+
+* Project name
+* Short description
+* Track
+* Domain
+* Difficulty
+* Core requirements
+* Stretch requirements
+* Recommended technology
+* Project status
+
+Participants can select a project and continue to the PRD process.
+
+> The final project catalogue will be populated by the BuildLab organizing
+> team.
+
+---
+
+## Tech Stack
+
+The landing website is intended to be a modern web experience built with:
+
+* React / Next.js
+* TypeScript
+* Tailwind CSS
+* Framer Motion where appropriate
+
+The implementation should remain lightweight and performance-focused.
+
+---
+
+## Repository Structure
+
+```text
+buildlab-2026/
+├── public/
+├── src/
+├── components/
+├── data/
+├── README.md
+├── package.json
+└── ...
+```
+
+Content such as mentors and projects should be data-driven so the organizing
+team can update them without restructuring the website.
+
+---
+
+## Organization
+
+Built and maintained by:
+
+**TechSpace**
+SRM University, Sonepat
+
+---
+
+## Links
+
+* **TechSpace Website:** [TO BE ADDED]
+* **TechSpace GitHub:** [TO BE ADDED]
+* **BuildLab Discord:** [TO BE ADDED]
+* **BuildLab Registration:** [TO BE ADDED]
+
+---
+
+## Status
+
+🚧 **In Development**
+
+This repository contains the official landing website for TechSpace
+BuildLab '26.
+
+````
+
+### Website structure I'd give Antigravity
+
+```text
+LANDING
+│
+├── HERO
+│   ├── TechSpace BuildLab '26
+│   ├── Learn by Building
+│   ├── 1–15 October 2026
+│   └── Apply / Explore Projects / Join Discord
+│
+├── ABOUT
+│   └── What is BuildLab?
+│
+├── TRACKS
+│   ├── Beginner
+│   ├── Intermediate
+│   └── Advanced
+│
+├── TIMELINE
+│   └── Oct 1 → Oct 15
+│
+├── PROJECTS
+│   └── Project catalogue + filters
+│
+├── MENTORS
+│   └── Photos + LinkedIn + GitHub
+│
+├── HOW IT WORKS
+│   └── Registration → PRD → Build → Demo
+│
+├── EVALUATION / PRIZES
+│
+├── DISCORD GUIDE
+│   └── Server structure + how to use it
+│
+└── FOOTER
+    ├── TechSpace Website
+    ├── TechSpace GitHub
+    └── BuildLab GitHub
+````
+
+### Who should make it?
+
+**Antigravity should build the actual landing website**, with you acting as the product/design owner. Give it the repository from the TechSpace GitHub organization and the README/brief above.
+
+I would **not** have it hardcode mentor/project information. Make those data-driven from the beginning:
+
+```text
+src/data/
+├── mentors.ts
+├── projects.ts
+├── timeline.ts
+└── tracks.ts
+```
+
+That way, when you get the final mentor roster or change a project, you edit the data rather than rebuilding the page. The proposal itself says the mentor roster, project-related launch information, and several operational details still need finalization. 
