@@ -64,6 +64,32 @@
   --radius-lg: 24px;
 
   --content-max: 1440px;
+
+  /* Semantic Discord Simulated Message Tokens (Light Theme) */
+  --discord-msg-text: #080808;
+  --discord-msg-muted: #6D6D68;
+  --discord-msg-code-bg: #FFFFFF;
+  --discord-msg-code-border: #CCDDF5;
+  --discord-msg-code-header: #E2E6ED;
+  --discord-msg-code-meta: #555A64;
+
+  --discord-msg-participant-bg: #F4F4E8;
+  --discord-msg-participant-border: #D5D5C8;
+  --discord-msg-participant-accent: #18B8D4;
+  --discord-msg-participant-badge-bg: #DDF6F7;
+  --discord-msg-participant-badge-text: #0D6E7F;
+
+  --discord-msg-bot-bg: #EDF3FC;
+  --discord-msg-bot-border: #CCDDF5;
+  --discord-msg-bot-accent: #1457D9;
+  --discord-msg-bot-badge-bg: #DCEBFF;
+  --discord-msg-bot-badge-text: #0F44AD;
+
+  --discord-msg-mentor-bg: #F0F7EB;
+  --discord-msg-mentor-border: #CDE5C5;
+  --discord-msg-mentor-accent: #38A824;
+  --discord-msg-mentor-badge-bg: #E5F4D8;
+  --discord-msg-mentor-badge-text: #1B5E14;
 }
 
 .dark {
@@ -91,6 +117,32 @@
   --ink: var(--foreground);
   --gray: var(--muted-foreground);
   --line: var(--border);
+
+  /* Semantic Discord Simulated Message Tokens (Dark Theme) */
+  --discord-msg-text: #F4F4E8;
+  --discord-msg-muted: #A8AAA4;
+  --discord-msg-code-bg: #101211;
+  --discord-msg-code-border: #30332F;
+  --discord-msg-code-header: #202422;
+  --discord-msg-code-meta: #8F938C;
+
+  --discord-msg-participant-bg: #151716;
+  --discord-msg-participant-border: #30332F;
+  --discord-msg-participant-accent: #39D2E8;
+  --discord-msg-participant-badge-bg: #16272B;
+  --discord-msg-participant-badge-text: #39D2E8;
+
+  --discord-msg-bot-bg: #17191B;
+  --discord-msg-bot-border: #2E3540;
+  --discord-msg-bot-accent: #4C82FF;
+  --discord-msg-bot-badge-bg: #162238;
+  --discord-msg-bot-badge-text: #4C82FF;
+
+  --discord-msg-mentor-bg: #171A17;
+  --discord-msg-mentor-border: #2D382E;
+  --discord-msg-mentor-accent: #78D85E;
+  --discord-msg-mentor-badge-bg: #18281A;
+  --discord-msg-mentor-badge-text: #78D85E;
 }
 
 *, ::before, ::after {
