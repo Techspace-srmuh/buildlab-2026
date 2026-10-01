@@ -20,8 +20,10 @@ export function Section({
     <section
       id={id}
       className={`relative w-full py-16 md:py-24 lg:py-28 ${
-        bordered ? "border-b border-[#CFCFC4]" : ""
-      } ${withGrid ? "grid-editorial" : ""} ${className}`}
+        id ? "scroll-mt-16 md:scroll-mt-20" : ""
+      } ${bordered ? "border-b border-[#CFCFC4]" : ""} ${
+        withGrid ? "grid-editorial" : ""
+      } ${className}`}
       {...props}
     >
       {children}

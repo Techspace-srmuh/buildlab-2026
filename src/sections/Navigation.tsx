@@ -89,8 +89,9 @@ export function Navigation() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-[var(--ink)] focus:outline-none"
+            className="md:hidden p-2 text-[var(--ink)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ink)] rounded"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
           >
             <div className="w-5 h-4 flex flex-col justify-between">
               <span

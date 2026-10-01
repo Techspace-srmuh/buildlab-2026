@@ -13,7 +13,10 @@ export function ScientificGraphic({
 }: ScientificGraphicProps) {
   if (variant === "hero-composition") {
     return (
-      <div className={`relative w-full max-w-[420px] lg:max-w-[460px] aspect-[4/4] select-none ${className}`}>
+      <div
+        aria-hidden="true"
+        className={`relative w-full max-w-[420px] lg:max-w-[460px] aspect-[4/4] select-none ${className}`}
+      >
         {/* Subtle Background Coordinate Grid */}
         <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 border border-[#CFCFC4] rounded-[18px] overflow-hidden pointer-events-none opacity-40">
           {Array.from({ length: 36 }).map((_, i) => (
@@ -41,6 +44,7 @@ export function ScientificGraphic({
           className="w-full h-full relative z-10 p-6"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
         >
           {/* Subtle Outer Measurement Circle */}
           <circle

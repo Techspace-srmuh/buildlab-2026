@@ -77,13 +77,13 @@ export function About() {
               <div className="text-[12px] font-mono text-[var(--gray)] tracking-[0.2em] mb-2 uppercase">
                 CALENDAR WINDOW
               </div>
-              <div className="text-6xl sm:text-7xl md:text-8xl font-black tracking-tight text-[var(--ink)] leading-[0.88]">
+              <div className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight text-[var(--ink)] leading-[0.88]">
                 05 OCT
               </div>
               <div className="text-3xl sm:text-4xl font-light text-[var(--gray)] my-1">
                 —
               </div>
-              <div className="text-6xl sm:text-7xl md:text-8xl font-black tracking-tight text-[var(--ink)] leading-[0.88]">
+              <div className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight text-[var(--ink)] leading-[0.88]">
                 23 OCT
               </div>
               <div className="text-xl sm:text-2xl font-mono font-bold tracking-wider text-[var(--gray)] mt-2">

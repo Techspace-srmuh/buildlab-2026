@@ -90,3 +90,24 @@ npm run build
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 📋 Deployment Readiness & Production Assets Checklist
+
+Before final deployment to production, complete the following content and asset insertions:
+
+1. **Discord Community Invite**:
+   - Update `discord` and set `isDiscordAvailable: true` in `src/data/links.ts` once the official server invite link is generated.
+2. **Project Catalogue**:
+   - Populate `src/data/projects.ts` once the curated project briefs are approved by the organizing committee.
+3. **Mentor Roster**:
+   - Populate `src/data/mentors.ts` with confirmed track mentors, evaluation panel members, faculty coordinator, photographs, and profiles.
+4. **Social Preview Image (Open Graph)**:
+   - Provide `public/og-image.png` (1200 × 630 px) adhering to the Swiss editorial / scientific identity:
+     - Typography: `TECHSPACE BUILDLAB ’26 — LEARN BY BUILDING`
+     - Palette: Warm paper (`#F4F4E8`), ink (`#080808`), and the spectrum gradient (`#1457D9` → `#18B8D4` → `#62C94A` → `#F3D21A`).
+     - (Note: Per Phase 7 QA specifications, placeholder/fake images are strictly avoided).
+5. **Favicon / App Icon**:
+   - Place official TechSpace favicon at `src/app/favicon.ico` or `public/favicon.ico`.
+

@@ -35,7 +35,7 @@ export function FinalCTA() {
                 </Label>
               </div>
 
-              <h2 className="font-display font-black text-6xl sm:text-7xl md:text-8xl lg:text-[104px] uppercase tracking-[-0.03em] leading-[0.88] text-[var(--ink)]">
+              <h2 className="font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-[104px] uppercase tracking-[-0.03em] leading-[0.88] text-[var(--ink)]">
                 LEARN
                 <br />
                 BY

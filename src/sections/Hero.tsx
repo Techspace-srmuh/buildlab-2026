@@ -107,7 +107,7 @@ export function Hero() {
 
               {/* Dominating Display Typography */}
               <motion.div variants={itemVariants} className="mb-5 md:mb-6">
-                <h1 className="font-display font-black text-6xl sm:text-7xl md:text-8xl lg:text-[104px] xl:text-[118px] uppercase tracking-[-0.03em] leading-[0.88] text-[var(--ink)]">
+                <h1 className="font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-[104px] xl:text-[118px] uppercase tracking-[-0.03em] leading-[0.88] text-[var(--ink)]">
                   BUILD
                   <br />
                   <span className="spectrum-gradient-text">LAB ’26</span>
@@ -175,12 +175,12 @@ export function Hero() {
                 </Button>
 
                 <Button
-                  href={LINKS.discord}
-                  target="_blank"
+                  href={LINKS.discord || LINKS.discordGuide}
+                  target={LINKS.discord ? "_blank" : undefined}
                   variant="secondary"
                   size="lg"
                   withArrow
-                  arrowDirection="up-right"
+                  arrowDirection={LINKS.discord ? "up-right" : "right"}
                 >
                   JOIN DISCORD
                 </Button>

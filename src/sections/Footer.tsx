@@ -26,7 +26,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-[var(--paper)] border-t border-[#CFCFC4] pt-16 pb-12 mt-16 md:mt-24 select-none">
+    <footer className="w-full bg-[var(--paper)] border-t border-[#CFCFC4] pt-16 pb-12 mt-16 md:mt-24">
       <Container>
         {/* Top Header Block: Branding & Tagline */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-10 border-b border-[#CFCFC4]">

@@ -53,8 +53,10 @@ html {
   background-color: var(--paper);
   color: var(--ink);
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -64,6 +66,21 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+/* Reduced Motion Compliance (Phase 7 Requirement) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
 ::selection {
