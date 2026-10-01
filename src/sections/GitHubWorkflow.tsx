@@ -59,16 +59,11 @@ export function GitHubWorkflow() {
   return (
     <Section id="workflow" className="bg-[var(--background)]">
       <Container>
-        {/* Section Header Strip */}
-        <div className="flex items-center justify-between border-b border-[var(--border)] pb-3 mb-10 md:mb-14">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-[var(--foreground)] inline-block" />
-            <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--foreground)]">
-              07 / BUILD IN PUBLIC
-            </span>
-          </div>
-          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.16em] text-[var(--muted-foreground)]">
-            RECOMMENDED WORKFLOW
+        {/* Section Header */}
+        <div className="flex items-center gap-2 border-b border-[var(--border)] pb-3 mb-10 md:mb-14">
+          <span className="w-2 h-2 bg-[var(--foreground)] inline-block" />
+          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--foreground)]">
+            07 / WORKFLOW
           </span>
         </div>
 
@@ -90,20 +85,13 @@ export function GitHubWorkflow() {
         </div>
 
         {/* ========================================================================= */}
-        {/* DESKTOP WORKFLOW SEQUENCE (Editorial Technical Diagram) */}
+        {/* DESKTOP WORKFLOW SEQUENCE (Clean Horizontal Editorial Flow) */}
         {/* ========================================================================= */}
-        <div className="hidden lg:block py-6 mb-12">
-          <div className="border border-[var(--border)] rounded-[20px] p-8 lg:p-10 bg-[var(--surface-card)] shadow-[4px_4px_0px_0px_var(--border)]">
-            {/* Diagram Status Bar */}
-            <div className="flex items-center justify-between font-mono text-[11px] text-[var(--muted-foreground)] uppercase tracking-widest pb-6 border-b border-[var(--border)]">
-              <span>SPECIFICATION // GIT LIFECYCLE</span>
-              <span>BRANCH → PR → CODE REVIEW</span>
-              <span>ENGINEERING PROTOCOL</span>
-            </div>
-
+        <div className="hidden lg:block py-4 mb-12">
+          <div className="border border-[var(--border)] rounded-[20px] p-8 lg:p-10 bg-[var(--surface-card)]">
             {/* Connecting Central Spine */}
-            <div className="relative pt-10 pb-6">
-              <div className="absolute top-[68px] left-6 right-6 h-[2px] bg-[var(--border)] z-0">
+            <div className="relative pt-6 pb-6">
+              <div className="absolute top-[44px] left-6 right-6 h-[2px] bg-[var(--border)] z-0">
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
@@ -129,7 +117,7 @@ export function GitHubWorkflow() {
                     className="flex flex-col items-center text-center group"
                   >
                     {/* Node Dot with Accent Ring */}
-                    <div className="w-10 h-10 rounded-full border-2 border-[var(--foreground)] bg-[var(--background)] flex items-center justify-center mb-4 transition-transform duration-200 group-hover:scale-110 shadow-[2px_2px_0px_0px_var(--border)]">
+                    <div className="w-10 h-10 rounded-full border-2 border-[var(--foreground)] bg-[var(--background)] flex items-center justify-center mb-3 transition-transform duration-200 group-hover:scale-110">
                       <div
                         className="w-3.5 h-3.5 rounded-full"
                         style={{ backgroundColor: step.accent }}
@@ -137,8 +125,8 @@ export function GitHubWorkflow() {
                     </div>
 
                     {/* Step Number */}
-                    <span className="font-mono text-[10px] text-[var(--muted-foreground)] font-bold tracking-widest uppercase mb-1">
-                      STEP {step.num}
+                    <span className="font-mono text-[11px] text-[var(--muted-foreground)] font-bold tracking-widest uppercase mb-1">
+                      {step.num}
                     </span>
 
                     {/* Step Name */}
@@ -153,12 +141,6 @@ export function GitHubWorkflow() {
                   </motion.div>
                 ))}
               </div>
-            </div>
-
-            {/* Diagram Footer */}
-            <div className="mt-8 pt-4 border-t border-[var(--border)] flex items-center justify-between font-mono text-[11px] text-[var(--muted-foreground)]">
-              <span>WORKFLOW GUIDANCE: ATOMIC COMMITS & PEER REVIEWS PRESERVE SYSTEM QUALITY</span>
-              <span className="text-[var(--foreground)] font-semibold uppercase">PLATFORM: GITHUB</span>
             </div>
           </div>
         </div>

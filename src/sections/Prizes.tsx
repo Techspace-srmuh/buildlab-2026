@@ -13,16 +13,11 @@ export function Prizes() {
   return (
     <Section id="prizes" className="bg-[var(--background)]">
       <Container>
-        {/* Section Header Strip */}
-        <div className="flex items-center justify-between border-b border-[var(--border)] pb-3 mb-10 md:mb-14">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-[var(--foreground)] inline-block" />
-            <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--foreground)]">
-              08 / RECOGNITION
-            </span>
-          </div>
-          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.16em] text-[var(--muted-foreground)]">
-            AWARDS & CERTIFICATES
+        {/* Section Header */}
+        <div className="flex items-center gap-2 border-b border-[var(--border)] pb-3 mb-10 md:mb-14">
+          <span className="w-2 h-2 bg-[var(--foreground)] inline-block" />
+          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--foreground)]">
+            08 / RECOGNITION
           </span>
         </div>
 
@@ -106,40 +101,22 @@ export function Prizes() {
               {RECOGNITION.totalCashPrizes}
             </div>
             <span className="text-[11px] text-[var(--muted-foreground)] mt-1">
-              ₹1,000 allocated per track winner
+              ₹500 · ₹1,000 · ₹1,500 across tracks
             </span>
           </div>
 
-          {/* Certificates Statement & Minimalist Certificate Icon Outline */}
-          <div className="md:col-span-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pl-0 md:pl-4">
-            <div className="space-y-2">
-              <span className="text-[10px] text-[var(--muted-foreground)] uppercase tracking-widest block font-semibold">
-                CREDENTIALS & DOCUMENTATION
-              </span>
-              <h4 className="font-display font-black text-2xl uppercase tracking-tight text-[var(--foreground)]">
-                COMPLETION & WINNER CERTIFICATES
-              </h4>
-              <p className="text-[13px] text-[var(--foreground)]/80 font-sans leading-relaxed max-w-md">
-                Official credentials awarded to verified project completers and track winners by
-                TechSpace, SRM University, Sonepat.
-              </p>
-            </div>
-
-            {/* Document / Certificate Minimal Outline Graphic */}
-            <div className="w-24 h-28 border border-[var(--border)] rounded-[8px] bg-[var(--surface-card)] p-2.5 flex flex-col justify-between shadow-[2px_2px_0px_0px_var(--border)] shrink-0 select-none">
-              <div className="flex items-center justify-between border-b border-[var(--border)] pb-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-[var(--cyan)]" />
-                <span className="text-[7px] text-[var(--muted-foreground)]">CERT</span>
-              </div>
-              <div className="space-y-1">
-                <div className="h-[2px] w-full bg-[var(--foreground)]" />
-                <div className="h-[2px] w-3/4 bg-[var(--border)]" />
-                <div className="h-[2px] w-1/2 bg-[var(--border)]" />
-              </div>
-              <div className="pt-1 border-t border-[var(--border)] flex justify-end">
-                <span className="w-2.5 h-2.5 rounded-full bg-[var(--green)]" />
-              </div>
-            </div>
+          {/* Certificates Statement */}
+          <div className="md:col-span-8 flex flex-col justify-center pl-0 md:pl-4 space-y-2">
+            <span className="text-[10px] text-[var(--muted-foreground)] uppercase tracking-widest block font-semibold">
+              CREDENTIALS & DOCUMENTATION
+            </span>
+            <h4 className="font-display font-black text-2xl uppercase tracking-tight text-[var(--foreground)]">
+              COMPLETION & WINNER CERTIFICATES
+            </h4>
+            <p className="text-[13px] text-[var(--foreground)]/80 font-sans leading-relaxed max-w-xl">
+              Official credentials awarded to verified project completers and track winners by
+              TechSpace, SRM University, Sonepat.
+            </p>
           </div>
         </div>
       </Container>

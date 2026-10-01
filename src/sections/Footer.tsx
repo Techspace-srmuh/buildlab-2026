@@ -111,13 +111,6 @@ export function Footer() {
           <div>
             <span>© 2026 TECHSPACE · SRM UNIVERSITY SONEPAT</span>
           </div>
-
-          <div className="flex items-center gap-3 text-[10px] uppercase tracking-wider">
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--blue)]" />
-            <span>05.10.2026 — 23.10.2026</span>
-            <span className="text-[var(--border)]">/</span>
-            <span>THREE WEEKS</span>
-          </div>
         </div>
       </Container>
     </footer>

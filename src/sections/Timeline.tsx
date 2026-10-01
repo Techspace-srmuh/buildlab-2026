@@ -4,7 +4,6 @@ import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
-import { Label } from "@/components/Label";
 import { TIMELINE } from "@/data/timeline";
 
 export function Timeline() {
@@ -17,21 +16,16 @@ export function Timeline() {
   return (
     <Section id="timeline" className="bg-[var(--background)]">
       <Container>
-        {/* Section Header Strip */}
-        <div className="flex items-center justify-between border-b border-[var(--border)] pb-3 mb-10 md:mb-14">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-[var(--foreground)] inline-block" />
-            <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--foreground)]">
-              03 / TIMELINE
-            </span>
-          </div>
-          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.16em] text-[var(--muted-foreground)]">
-            PROGRAM SCHEDULE
+        {/* Section Header */}
+        <div className="flex items-center gap-2 border-b border-[var(--border)] pb-3 mb-10 md:mb-14">
+          <span className="w-2 h-2 bg-[var(--foreground)] inline-block" />
+          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--foreground)]">
+            03 / TIMELINE
           </span>
         </div>
 
         {/* Headline & Supporting Copy */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 mb-14 md:mb-20 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 mb-12 md:mb-16 items-end">
           <div className="lg:col-span-7">
             <h2 className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-[80px] uppercase tracking-[-0.03em] leading-[0.9] text-[var(--foreground)]">
               THREE WEEKS.
@@ -49,127 +43,87 @@ export function Timeline() {
         </div>
 
         {/* ========================================================================= */}
-        {/* DESKTOP TIMELINE (Horizontal Editorial Diagram) */}
+        {/* DESKTOP TIMELINE (Clean 2-Anchor Editorial Spread) */}
         {/* ========================================================================= */}
-        <div className="hidden md:block py-6">
+        <div className="hidden md:block py-4">
           <motion.div
-            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.6, ease: easeCurve }}
-            className="border border-[var(--border)] rounded-[20px] p-8 lg:p-12 bg-[var(--surface-card)] shadow-[4px_4px_0px_0px_rgba(8,8,8,0.06)] dark:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)]"
+            transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: easeCurve }}
+            className="border border-[var(--border)] rounded-[20px] p-8 lg:p-12 bg-[var(--surface-card)]"
           >
-            {/* Top Diagram Metadata Bar */}
-            <div className="flex items-center justify-between font-mono text-[11px] text-[var(--muted-foreground)] uppercase tracking-widest pb-6 border-b border-[var(--border)]">
-              <span>PHASE: 21 CALENDAR DAYS</span>
-              <span>CONFIRMED EVENT ANCHORS</span>
-              <span>SYNCHRONIZATION: GITHUB + DISCORD</span>
-            </div>
-
-            {/* Main Horizontal Timeline Structure */}
-            <div className="relative pt-6 pb-6">
-              {/* Milestones Horizontal Grid */}
-              <div className="relative z-10 grid grid-cols-2 gap-12">
-                {/* 01. INAUGURATION (START) */}
-                <div className="flex flex-col items-start pr-6">
-                  {/* Dominant Date Typography */}
-                  <div className="mb-4">
-                    <span className="font-mono text-[11px] text-[var(--muted-foreground)] uppercase tracking-widest block mb-1">
-                      DAY 01 // START
+            <div className="grid grid-cols-2 gap-12 lg:gap-16">
+              {/* 01. INAUGURATION */}
+              <div className="flex flex-col items-start pr-6">
+                <div className="mb-4">
+                  <div className="font-display font-black text-5xl lg:text-7xl uppercase tracking-tight text-[var(--foreground)] leading-none">
+                    {startPoint.shortDate}
+                    <span className="text-[var(--muted-foreground)] font-light text-3xl lg:text-5xl ml-2">
+                      {startPoint.year}
                     </span>
-                    <div className="font-display font-black text-5xl lg:text-7xl uppercase tracking-tight text-[var(--foreground)] leading-none">
-                      {startPoint.shortDate}
-                      <span className="text-[var(--muted-foreground)] font-light text-3xl lg:text-5xl ml-1">
-                        {startPoint.year}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Marker Node */}
-                  <div className="my-3 flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full border-2 border-[var(--foreground)] bg-[var(--background)] flex items-center justify-center">
-                      <div className="w-2.5 h-2.5 rounded-full bg-[var(--blue)]" />
-                    </div>
-                    <span className="font-mono text-[11px] font-bold tracking-widest uppercase text-[var(--foreground)]">
-                      IN-PERSON KICK-OFF
-                    </span>
-                  </div>
-
-                  {/* Content Card */}
-                  <div className="mt-4 pt-4 border-t border-[var(--border)] w-full">
-                    <h3 className="font-display font-black text-2xl uppercase tracking-tight text-[var(--foreground)] mb-1">
-                      {startPoint.title}
-                    </h3>
-                    <div className="font-mono text-[12px] font-bold text-[var(--foreground)] mb-2 flex flex-wrap gap-2">
-                      <Label variant="solid" size="sm">
-                        {startPoint.time}
-                      </Label>
-                      <Label variant="outline" size="sm">
-                        {startPoint.location}
-                      </Label>
-                    </div>
-                    <p className="text-[14px] text-[var(--foreground)]/80 leading-relaxed font-sans max-w-sm">
-                      {startPoint.description}
-                    </p>
                   </div>
                 </div>
 
-                {/* 02. PROGRAM CONCLUSION (END) */}
-                <div className="flex flex-col items-start pl-6 border-l border-[var(--border)]/60">
-                  {/* Dominant Date Typography */}
-                  <div className="mb-4">
-                    <span className="font-mono text-[11px] text-[var(--muted-foreground)] uppercase tracking-widest block mb-1">
-                      DAY 21 // CONCLUSION
-                    </span>
-                    <div className="font-display font-black text-5xl lg:text-7xl uppercase tracking-tight text-[var(--foreground)] leading-none">
-                      {endPoint.shortDate}
-                      <span className="text-[var(--muted-foreground)] font-light text-3xl lg:text-5xl ml-1">
-                        {endPoint.year}
-                      </span>
-                    </div>
-                  </div>
+                <div className="my-2 flex items-center gap-2.5">
+                  <div className="w-3 h-3 rounded-full bg-[var(--blue)]" />
+                  <span className="font-mono text-[11px] font-bold tracking-widest uppercase text-[var(--muted-foreground)]">
+                    KICK-OFF
+                  </span>
+                </div>
 
-                  {/* Marker Node */}
-                  <div className="my-3 flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full border-2 border-[var(--foreground)] bg-[var(--background)] flex items-center justify-center">
-                      <div className="w-2.5 h-2.5 rounded-full bg-[var(--green)]" />
-                    </div>
-                    <span className="font-mono text-[11px] font-bold tracking-widest uppercase text-[var(--foreground)]">
-                      FINAL EVALUATION
-                    </span>
+                <div className="mt-4 pt-4 border-t border-[var(--border)] w-full">
+                  <h3 className="font-display font-black text-2xl lg:text-3xl uppercase tracking-tight text-[var(--foreground)] mb-2">
+                    {startPoint.title}
+                  </h3>
+                  <div className="font-mono text-[12px] font-semibold text-[var(--foreground)] mb-3">
+                    {startPoint.time} · {startPoint.location}
                   </div>
-
-                  {/* Content Card */}
-                  <div className="mt-4 pt-4 border-t border-[var(--border)] w-full">
-                    <h3 className="font-display font-black text-2xl uppercase tracking-tight text-[var(--foreground)] mb-1">
-                      {endPoint.title}
-                    </h3>
-                    <div className="font-mono text-[12px] font-bold text-[var(--foreground)] mb-2 flex gap-2">
-                      <Label variant="soft-green" size="sm">
-                        3 WEEKS COMPLETED
-                      </Label>
-                    </div>
-                    <p className="text-[14px] text-[var(--foreground)]/80 leading-relaxed font-sans max-w-sm">
-                      {endPoint.description}
-                    </p>
-                  </div>
+                  <p className="text-[14px] text-[var(--foreground)]/80 leading-relaxed font-sans max-w-sm">
+                    {startPoint.description}
+                  </p>
                 </div>
               </div>
-            </div>
 
-            {/* Bottom Status Readout */}
-            <div className="mt-8 pt-4 border-t border-[var(--border)] flex items-center justify-between font-mono text-[11px] text-[var(--muted-foreground)]">
-              <span>ONLINE PHASES: GITHUB COMMITS · PRD APPROVALS · CODE REVIEWS · DISCORD MENTORING</span>
-              <span className="text-[var(--foreground)] font-semibold uppercase">TOTAL SPRINT: 3 WEEKS</span>
+              {/* 02. PROGRAM CONCLUSION */}
+              <div className="flex flex-col items-start pl-6 border-l border-[var(--border)]">
+                <div className="mb-4">
+                  <div className="font-display font-black text-5xl lg:text-7xl uppercase tracking-tight text-[var(--foreground)] leading-none">
+                    {endPoint.shortDate}
+                    <span className="text-[var(--muted-foreground)] font-light text-3xl lg:text-5xl ml-2">
+                      {endPoint.year}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="my-2 flex items-center gap-2.5">
+                  <div className="w-3 h-3 rounded-full bg-[var(--green)]" />
+                  <span className="font-mono text-[11px] font-bold tracking-widest uppercase text-[var(--muted-foreground)]">
+                    CONCLUSION
+                  </span>
+                </div>
+
+                <div className="mt-4 pt-4 border-t border-[var(--border)] w-full">
+                  <h3 className="font-display font-black text-2xl lg:text-3xl uppercase tracking-tight text-[var(--foreground)] mb-2">
+                    {endPoint.title}
+                  </h3>
+                  <div className="font-mono text-[12px] font-semibold text-[#2d731e] dark:text-[var(--green)] mb-3">
+                    Three Weeks Completed
+                  </div>
+                  <p className="text-[14px] text-[var(--foreground)]/80 leading-relaxed font-sans max-w-sm">
+                    {endPoint.description}
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
 
         {/* ========================================================================= */}
-        {/* MOBILE TIMELINE (Vertical Editorial Flow) */}
+        {/* MOBILE TIMELINE (Vertical Flow) */}
         {/* ========================================================================= */}
         <div className="md:hidden">
-          <div className="relative border-l-2 border-[var(--foreground)] ml-4 pl-6 space-y-12 py-2">
+          <div className="relative border-l-2 border-[var(--foreground)] ml-3 pl-6 space-y-10 py-2">
             {/* 01. INAUGURATION */}
             <motion.div
               initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -10 }}
@@ -178,14 +132,9 @@ export function Timeline() {
               transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: easeCurve }}
               className="relative"
             >
-              {/* Marker Dot */}
-              <div className="absolute -left-[33px] top-1.5 w-5 h-5 rounded-full border-2 border-[var(--foreground)] bg-[var(--background)] flex items-center justify-center">
-                <div className="w-2 h-2 rounded-full bg-[var(--blue)]" />
+              <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full border-2 border-[var(--foreground)] bg-[var(--background)] flex items-center justify-center">
+                <div className="w-1.5 h-1.5 rounded-full bg-[var(--blue)]" />
               </div>
-
-              <span className="font-mono text-[10px] text-[var(--muted-foreground)] uppercase tracking-widest block mb-1">
-                DAY 01 // KICK-OFF
-              </span>
 
               <div className="font-display font-black text-4xl uppercase text-[var(--foreground)] leading-none mb-3">
                 {startPoint.shortDate}
@@ -194,17 +143,12 @@ export function Timeline() {
                 </span>
               </div>
 
-              <div className="border border-[var(--border)] rounded-[14px] p-5 bg-[var(--surface-card)] space-y-3">
+              <div className="border border-[var(--border)] rounded-[14px] p-5 bg-[var(--surface-card)] space-y-2">
                 <h3 className="font-display font-bold text-xl uppercase tracking-tight text-[var(--foreground)]">
                   {startPoint.title}
                 </h3>
-                <div className="space-y-1.5 font-mono text-[11px]">
-                  <div className="text-[var(--foreground)] font-semibold">
-                    TIME: {startPoint.time}
-                  </div>
-                  <div className="text-[var(--muted-foreground)] font-medium">
-                    VENUE: {startPoint.location}
-                  </div>
+                <div className="font-mono text-[11px] text-[var(--muted-foreground)]">
+                  {startPoint.time} · {startPoint.location}
                 </div>
                 <p className="text-[13px] text-[var(--foreground)]/85 leading-relaxed pt-2 border-t border-[var(--border)]">
                   {startPoint.description}
@@ -220,14 +164,9 @@ export function Timeline() {
               transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: easeCurve, delay: 0.1 }}
               className="relative"
             >
-              {/* Marker Dot */}
-              <div className="absolute -left-[33px] top-1.5 w-5 h-5 rounded-full border-2 border-[var(--foreground)] bg-[var(--background)] flex items-center justify-center">
-                <div className="w-2 h-2 rounded-full bg-[var(--green)]" />
+              <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full border-2 border-[var(--foreground)] bg-[var(--background)] flex items-center justify-center">
+                <div className="w-1.5 h-1.5 rounded-full bg-[var(--green)]" />
               </div>
-
-              <span className="font-mono text-[10px] text-[var(--muted-foreground)] uppercase tracking-widest block mb-1">
-                DAY 21 // CONCLUSION
-              </span>
 
               <div className="font-display font-black text-4xl uppercase text-[var(--foreground)] leading-none mb-3">
                 {endPoint.shortDate}
@@ -236,12 +175,12 @@ export function Timeline() {
                 </span>
               </div>
 
-              <div className="border border-[var(--border)] rounded-[14px] p-5 bg-[var(--surface-card)] space-y-3">
+              <div className="border border-[var(--border)] rounded-[14px] p-5 bg-[var(--surface-card)] space-y-2">
                 <h3 className="font-display font-bold text-xl uppercase tracking-tight text-[var(--foreground)]">
                   {endPoint.title}
                 </h3>
                 <div className="font-mono text-[11px] text-[#2d731e] dark:text-[var(--green)] font-semibold">
-                  FORMAT: THREE WEEKS COMPLETED
+                  Three Weeks Completed
                 </div>
                 <p className="text-[13px] text-[var(--foreground)]/85 leading-relaxed pt-2 border-t border-[var(--border)]">
                   {endPoint.description}

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
@@ -203,39 +204,26 @@ function TrackCard({ track }: { track: Track }) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div
+    <Link
+      href={`/projects/${track.id}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      tabIndex={0}
-      className="group relative flex flex-col justify-between border border-[var(--border)] rounded-[16px] md:rounded-[20px] bg-[var(--surface-card)] p-6 sm:p-8 lg:p-8 min-h-[380px] sm:min-h-[420px] transition-all duration-300 hover:border-[var(--foreground)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.12)] dark:hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.4)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--foreground)]"
+      className="group relative flex flex-col justify-between border border-[var(--border)] rounded-[16px] md:rounded-[20px] bg-[var(--surface-card)] p-6 sm:p-8 lg:p-8 min-h-[380px] sm:min-h-[420px] transition-all duration-300 hover:border-[var(--foreground)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.12)] dark:hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.4)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--foreground)] select-none"
     >
-      {/* Top Card Bar: Track Number & Technical Tag */}
+      {/* Top Card Bar: Track Number */}
       <div>
         <div className="flex items-start justify-between border-b border-[var(--border)] pb-4 mb-6">
           <div className="flex items-baseline gap-2">
-            <span
-              className="font-display font-black text-3xl sm:text-4xl text-[var(--foreground)] tracking-tight transition-transform duration-200 group-hover:-translate-y-0.5"
-            >
+            <span className="font-display font-black text-3xl sm:text-4xl text-[var(--foreground)] tracking-tight transition-transform duration-200 group-hover:-translate-y-0.5">
               {track.number}
             </span>
             <span className="font-mono text-[10px] text-[var(--muted-foreground)] uppercase tracking-widest">
               / TRACK
             </span>
           </div>
-
-          <span
-            className="font-mono text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-[4px] border"
-            style={{
-              backgroundColor: isHovered ? track.softHex : "transparent",
-              color: isHovered ? "var(--foreground)" : "var(--muted-foreground)",
-              borderColor: isHovered ? track.accentHex : "var(--border)",
-            }}
-          >
-            {track.symbol}
-          </span>
         </div>
 
-        {/* Track Title and Team Format (Primary Hierarchy) */}
+        {/* Track Title and Team Format */}
         <div className="space-y-2">
           <h3 className="font-display font-black text-4xl sm:text-5xl lg:text-5xl uppercase tracking-[-0.02em] text-[var(--foreground)] leading-[0.9]">
             {track.name}
@@ -255,6 +243,10 @@ function TrackCard({ track }: { track: Track }) {
               </span>
             )}
           </div>
+
+          <p className="font-sans text-[14px] text-[var(--foreground)]/80 leading-relaxed pt-2">
+            {track.description}
+          </p>
         </div>
       </div>
 
@@ -269,12 +261,11 @@ function TrackCard({ track }: { track: Track }) {
 
       {/* Bottom Card Bar: Expanding Accent Line & Directional Arrow */}
       <div className="pt-4 border-t border-[var(--border)] flex items-center justify-between">
-        <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[var(--muted-foreground)] font-medium">
+        <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[var(--foreground)] font-semibold group-hover:underline underline-offset-4">
           <span>SELECT TRACK</span>
         </div>
 
         <div className="flex items-center gap-3">
-          {/* Subtle Dynamic Accent Line */}
           <div
             className="h-[2px] transition-all duration-300 rounded-full"
             style={{
@@ -283,14 +274,12 @@ function TrackCard({ track }: { track: Track }) {
             }}
           />
 
-          <span
-            className="transition-transform duration-200 group-hover:translate-x-1.5 text-[var(--foreground)]"
-          >
+          <span className="transition-transform duration-200 group-hover:translate-x-1.5 text-[var(--foreground)]">
             <Arrow direction="right" className="w-4 h-4" />
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -302,16 +291,11 @@ export function Tracks() {
   return (
     <Section id="tracks" className="bg-[var(--background)]">
       <Container>
-        {/* Section Header Strip */}
-        <div className="flex items-center justify-between border-b border-[var(--border)] pb-3 mb-10 md:mb-14">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-[var(--foreground)] inline-block" />
-            <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--foreground)]">
-              02 / TRACKS
-            </span>
-          </div>
-          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.16em] text-[var(--muted-foreground)]">
-            PROGRAM FORMATS
+        {/* Section Header */}
+        <div className="flex items-center gap-2 border-b border-[var(--border)] pb-3 mb-10 md:mb-14">
+          <span className="w-2 h-2 bg-[var(--foreground)] inline-block" />
+          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--foreground)]">
+            02 / TRACKS
           </span>
         </div>
 

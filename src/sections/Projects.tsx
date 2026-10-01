@@ -1,48 +1,27 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import React from "react";
+import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
-import { BrowserWindow } from "@/components/BrowserWindow";
-import { ProjectCard } from "@/components/ProjectCard";
-import {
-  PROJECTS,
-  PROJECT_TRACK_FILTERS,
-  ProjectTrack,
-} from "@/data/projects";
+import { Arrow } from "@/components/Arrow";
+import { TRACKS } from "@/data/tracks";
+import { CATALOGUE_STATS } from "@/data/projects";
 
 export function Projects() {
-  const [selectedTrack, setSelectedTrack] = useState<ProjectTrack>("all");
-  const shouldReduceMotion = useReducedMotion();
-  const easeCurve = [0.22, 1, 0.36, 1] as const;
-
-  // Filter projects by track when populated
-  const filteredProjects = PROJECTS.filter((project) => {
-    if (selectedTrack === "all") return true;
-    return project.track === selectedTrack;
-  });
-
-  const hasProjects = PROJECTS.length > 0;
-
   return (
     <Section id="projects" className="bg-[var(--background)]">
       <Container>
-        {/* Section Header Strip */}
-        <div className="flex items-center justify-between border-b border-[var(--border)] pb-3 mb-10 md:mb-14">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-[var(--foreground)] inline-block" />
-            <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--foreground)]">
-              04 / PROJECTS
-            </span>
-          </div>
-          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.16em] text-[var(--muted-foreground)]">
-            PROJECT CATALOGUE
+        {/* Section Header */}
+        <div className="flex items-center gap-2 border-b border-[var(--border)] pb-3 mb-10 md:mb-14">
+          <span className="w-2 h-2 bg-[var(--foreground)] inline-block" />
+          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--foreground)]">
+            04 / PROBLEM STATEMENTS
           </span>
         </div>
 
-        {/* Section Headline & Supporting Copy */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 mb-10 md:mb-14 items-end">
+        {/* Section Headline & Editorial Copy */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 mb-12 md:mb-16 items-end">
           <div className="lg:col-span-7">
             <h2 className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-[80px] uppercase tracking-[-0.03em] leading-[0.9] text-[var(--foreground)]">
               WHAT WILL
@@ -52,104 +31,105 @@ export function Projects() {
           </div>
 
           <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-[var(--border)] pt-4 lg:pt-0 lg:pl-8">
-            <p className="font-mono text-[14px] sm:text-[15px] uppercase tracking-wider text-[var(--foreground)] leading-relaxed font-medium">
-              Explore the projects available for BuildLab ’26.
-            </p>
+            <div className="space-y-2">
+              <span className="font-mono text-[12px] font-bold uppercase tracking-widest text-[var(--foreground)] block">
+                {CATALOGUE_STATS.total} CURATED ENGINEERING PROBLEM STATEMENTS
+              </span>
+              <p className="font-mono text-[14px] sm:text-[15px] uppercase tracking-wider text-[var(--muted-foreground)] leading-relaxed font-medium">
+                Choose the level that matches you. Explore problem statements across three focused tracks, then inspect their technical dossiers.
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Filter Navigation Bar (Keyboard accessible) */}
-        <div className="flex flex-wrap items-center gap-2.5 mb-10 pb-4 border-b border-[var(--border)]">
-          <span className="font-mono text-[11px] uppercase tracking-widest text-[var(--muted-foreground)] font-semibold mr-2 hidden sm:inline-block">
-            FILTER TRACK:
-          </span>
+        {/* The Three Editorial Track Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {TRACKS.map((track) => {
+            const trackStyles = {
+              beginner: {
+                accent: "var(--blue)",
+                softBg: "bg-[var(--blue-soft)]",
+                textAccent: "text-[var(--blue)]",
+                borderHover: "hover:border-[var(--blue)]",
+                marker: "bg-[var(--blue)]",
+                route: "/projects/beginner",
+                ctaLabel: "EXPLORE BEGINNER",
+              },
+              intermediate: {
+                accent: "var(--green)",
+                softBg: "bg-[var(--green-soft)]",
+                textAccent: "text-[#206313] dark:text-[var(--green)]",
+                borderHover: "hover:border-[var(--green)]",
+                marker: "bg-[var(--green)]",
+                route: "/projects/intermediate",
+                ctaLabel: "EXPLORE INTERMEDIATE",
+              },
+              advanced: {
+                accent: "var(--yellow)",
+                softBg: "bg-[var(--yellow-soft)]",
+                textAccent: "text-[#6b5600] dark:text-[var(--yellow)]",
+                borderHover: "hover:border-[var(--yellow)]",
+                marker: "bg-[var(--yellow)]",
+                route: "/projects/advanced",
+                ctaLabel: "EXPLORE ADVANCED",
+              },
+            }[track.id];
 
-          {PROJECT_TRACK_FILTERS.map((filter) => {
-            const isActive = selectedTrack === filter.id;
             return (
-              <button
-                key={filter.id}
-                type="button"
-                onClick={() => setSelectedTrack(filter.id)}
-                aria-pressed={isActive}
-                className={`font-mono text-[12px] md:text-[13px] uppercase tracking-widest px-4 py-2 rounded-[6px] transition-all duration-200 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--foreground)] ${
-                  isActive
-                    ? "bg-[var(--foreground)] text-[color:var(--background)] font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,0.15)]"
-                    : "bg-transparent text-[var(--foreground)] border border-[var(--border)] hover:border-[var(--foreground)] font-medium"
-                }`}
-                style={isActive ? { color: "var(--background)" } : undefined}
+              <Link
+                key={track.id}
+                href={trackStyles.route}
+                className={`group relative flex flex-col justify-between border border-[var(--border)] rounded-[14px] bg-[var(--surface-card)] p-6 sm:p-8 transition-all duration-200 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(8,8,8,0.1)] dark:hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.4)] ${trackStyles.borderHover} select-none`}
               >
-                {filter.label}
-              </button>
+                <div>
+                  {/* Top Header: Track Number & Project Count */}
+                  <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-[var(--border)]">
+                    <div className="flex items-center gap-2">
+                      <span className={`w-2.5 h-2.5 rounded-[2px] ${trackStyles.marker}`} />
+                      <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">
+                        TRACK {track.number}
+                      </span>
+                    </div>
+
+                    <span
+                      className={`font-mono text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-[4px] border border-[var(--border)] ${trackStyles.softBg} ${trackStyles.textAccent}`}
+                    >
+                      {track.count} PROJECTS
+                    </span>
+                  </div>
+
+                  {/* Track Name */}
+                  <h3 className="font-display font-black text-3xl sm:text-4xl uppercase tracking-tight text-[var(--foreground)] mb-2 leading-none">
+                    {track.name}
+                  </h3>
+
+                  {/* Format */}
+                  <div className="mb-4">
+                    <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[var(--muted-foreground)]">
+                      FORMAT: <strong className="text-[var(--foreground)]">{track.teamSize} ({track.format})</strong>
+                    </span>
+                  </div>
+
+                  {/* Editorial Description */}
+                  <p className="font-sans text-[14px] text-[var(--foreground)]/80 leading-relaxed mb-6">
+                    {track.description}
+                  </p>
+                </div>
+
+                {/* Card CTA Footer */}
+                <div className="pt-4 border-t border-[var(--border)] flex items-center justify-between">
+                  <span className="font-mono text-[12px] sm:text-[13px] font-black uppercase tracking-wider text-[var(--foreground)] flex items-center gap-2 group-hover:underline underline-offset-4">
+                    <span>{trackStyles.ctaLabel}</span>
+                    <Arrow
+                      direction="right"
+                      className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1.5"
+                    />
+                  </span>
+                </div>
+              </Link>
             );
           })}
         </div>
-
-        {/* Projects Display Area */}
-        {hasProjects ? (
-          /* Render Populated Project Grid */
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
-        ) : (
-          /* Intentional Pre-Launch Editorial Empty State */
-          <motion.div
-            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: easeCurve }}
-          >
-            <BrowserWindow
-              title="CATALOGUE.REGISTRY // BL-2026"
-              badge="PRE-LAUNCH"
-              className="max-w-4xl mx-auto"
-              bodyClassName="p-8 sm:p-12 md:p-16 flex flex-col items-center justify-center text-center"
-            >
-              {/* Geometric Dotted Matrix Icon Accent */}
-              <div className="w-16 h-16 rounded-[12px] border border-[var(--border)] bg-[var(--surface-muted)] flex items-center justify-center mb-6 shadow-[2px_2px_0px_0px_rgba(8,8,8,0.1)] dark:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)]">
-                <div className="grid grid-cols-3 gap-1.5 p-2">
-                  <span className="w-2 h-2 rounded-full bg-[var(--blue)]" />
-                  <span className="w-2 h-2 rounded-full bg-[var(--cyan)]" />
-                  <span className="w-2 h-2 rounded-full bg-[var(--green)]" />
-                  <span className="w-2 h-2 rounded-full bg-[var(--yellow)]" />
-                  <span className="w-2 h-2 rounded-full bg-[var(--foreground)]" />
-                  <span className="w-2 h-2 rounded-full bg-[var(--blue)]" />
-                  <span className="w-2 h-2 rounded-full bg-[var(--cyan)]" />
-                  <span className="w-2 h-2 rounded-full bg-[var(--green)]" />
-                  <span className="w-2 h-2 rounded-full bg-[var(--yellow)]" />
-                </div>
-              </div>
-
-              {/* Dominant Editorial Heading */}
-              <h3 className="font-display font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-[-0.02em] text-[var(--foreground)] leading-tight mb-3">
-                PROJECT CATALOGUE
-                <br />
-                <span className="text-[var(--muted-foreground)]">COMING SOON</span>
-              </h3>
-
-              {/* Exact Confirmed Message */}
-              <p className="font-sans text-[15px] sm:text-[17px] text-[var(--foreground)]/80 max-w-lg leading-relaxed mb-8">
-                The BuildLab project catalogue will appear here once the official project list is
-                published.
-              </p>
-
-              {/* Status Indicator Badges */}
-              <div className="flex flex-wrap items-center justify-center gap-3 pt-6 border-t border-[var(--border)] w-full max-w-md font-mono text-[11px]">
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-[6px] border border-[var(--border)] bg-[var(--surface-card)]">
-                  <span className="w-2 h-2 rounded-full bg-[var(--cyan)] animate-pulse" />
-                  <span className="text-[var(--foreground)] font-semibold uppercase">
-                    STATUS: CURATION IN PROGRESS
-                  </span>
-                </div>
-                <div className="px-3 py-1.5 rounded-[6px] border border-[var(--border)] bg-[var(--surface-card)] text-[var(--muted-foreground)] uppercase">
-                  RELEASE: INAUGURATION DAY
-                </div>
-              </div>
-            </BrowserWindow>
-          </motion.div>
-        )}
       </Container>
     </Section>
   );

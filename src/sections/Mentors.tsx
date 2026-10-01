@@ -4,7 +4,6 @@ import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
-import { BrowserWindow } from "@/components/BrowserWindow";
 import { MentorCard } from "@/components/MentorCard";
 import { MENTORS } from "@/data/mentors";
 
@@ -17,16 +16,11 @@ export function Mentors() {
   return (
     <Section id="mentors" className="bg-[var(--background)]">
       <Container>
-        {/* Section Header Strip */}
-        <div className="flex items-center justify-between border-b border-[var(--border)] pb-3 mb-10 md:mb-14">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-[var(--foreground)] inline-block" />
-            <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--foreground)]">
-              05 / MENTORS
-            </span>
-          </div>
-          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.16em] text-[var(--muted-foreground)]">
-            PROGRAM GUIDANCE
+        {/* Section Header */}
+        <div className="flex items-center gap-2 border-b border-[var(--border)] pb-3 mb-10 md:mb-14">
+          <span className="w-2 h-2 bg-[var(--foreground)] inline-block" />
+          <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.18em] font-semibold text-[var(--foreground)]">
+            05 / MENTORS
           </span>
         </div>
 
@@ -67,88 +61,33 @@ export function Mentors() {
             ))}
           </div>
         ) : (
-          /* Intentional Pre-Launch Editorial Empty State */
+          /* Clean Pre-Launch Editorial State */
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: easeCurve }}
+            className="border border-[var(--border)] rounded-[20px] p-10 sm:p-16 md:p-20 bg-[var(--surface-card)] text-center flex flex-col items-center justify-center max-w-3xl mx-auto"
           >
-            <BrowserWindow
-              title="PERSONNEL.ROSTER // BL-2026"
-              badge="PENDING ANNOUNCEMENT"
-              className="max-w-4xl mx-auto"
-              bodyClassName="p-8 sm:p-12 md:p-16 flex flex-col items-center justify-center text-center"
-            >
-              {/* Geometric Node Icon Motif */}
-              <div className="w-16 h-16 rounded-[12px] border border-[var(--foreground)] bg-[var(--surface-muted)] flex items-center justify-center mb-6 shadow-[2px_2px_0px_0px_var(--border)]">
-                <div className="flex items-center gap-1.5">
-                  <span className="w-3 h-3 rounded-full bg-[var(--blue)]" />
-                  <span className="w-3 h-3 rounded-full bg-[var(--cyan)]" />
-                  <span className="w-3 h-3 rounded-full bg-[var(--green)]" />
-                  <span className="w-3 h-3 rounded-full bg-[var(--yellow)]" />
-                </div>
+            {/* Geometric Node Icon Motif */}
+            <div className="w-14 h-14 rounded-[12px] border border-[var(--border)] bg-[var(--surface-muted)] flex items-center justify-center mb-6">
+              <div className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--blue)]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--cyan)]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--green)]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--yellow)]" />
               </div>
+            </div>
 
-              {/* Dominant Editorial Heading */}
-              <h3 className="font-display font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-[-0.02em] text-[var(--foreground)] leading-tight mb-3">
-                MENTOR ROSTER
-                <br />
-                <span className="text-[var(--muted-foreground)]">COMING SOON</span>
-              </h3>
+            <h3 className="font-display font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-[-0.02em] text-[var(--foreground)] leading-tight mb-3">
+              MENTOR ROSTER
+              <br />
+              <span className="text-[var(--muted-foreground)]">COMING SOON</span>
+            </h3>
 
-              {/* Exact Confirmed Message */}
-              <p className="font-sans text-[15px] sm:text-[17px] text-[var(--foreground)]/80 max-w-lg leading-relaxed mb-8">
-                Meet the mentors supporting BuildLab ’26.
-              </p>
-
-              {/* Confirmed Program Personnel Roles (Green Sheet Requirements) */}
-              <div className="w-full max-w-2xl pt-8 border-t border-[var(--border)] grid grid-cols-1 sm:grid-cols-3 gap-4 text-left font-mono text-[11px]">
-                <div className="p-3.5 border border-[var(--border)] rounded-[8px] bg-[var(--surface-card)]">
-                  <span className="block text-[var(--muted-foreground)] text-[10px] uppercase tracking-wider mb-1">
-                    ROLE 01
-                  </span>
-                  <span className="font-bold text-[var(--foreground)] uppercase block">
-                    TRACK MENTORS
-                  </span>
-                  <span className="text-[var(--muted-foreground)] text-[10px] block mt-1">
-                    PR reviews & architecture guidance
-                  </span>
-                </div>
-
-                <div className="p-3.5 border border-[var(--border)] rounded-[8px] bg-[var(--surface-card)]">
-                  <span className="block text-[var(--muted-foreground)] text-[10px] uppercase tracking-wider mb-1">
-                    ROLE 02
-                  </span>
-                  <span className="font-bold text-[var(--foreground)] uppercase block">
-                    EVALUATION PANEL
-                  </span>
-                  <span className="text-[var(--muted-foreground)] text-[10px] block mt-1">
-                    Live demo scoring & rubric evaluation
-                  </span>
-                </div>
-
-                <div className="p-3.5 border border-[var(--border)] rounded-[8px] bg-[var(--surface-card)]">
-                  <span className="block text-[var(--muted-foreground)] text-[10px] uppercase tracking-wider mb-1">
-                    ROLE 03
-                  </span>
-                  <span className="font-bold text-[var(--foreground)] uppercase block">
-                    FACULTY COORDINATOR
-                  </span>
-                  <span className="text-[var(--muted-foreground)] text-[10px] block mt-1">
-                    SRM University academic coordination
-                  </span>
-                </div>
-              </div>
-
-              {/* Status Pill Badge */}
-              <div className="mt-6 font-mono text-[11px] text-[var(--muted-foreground)] flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[var(--green)] animate-pulse" />
-                <span className="uppercase font-semibold text-[var(--foreground)]">
-                  OFFICIAL ROSTER RELEASE PRIOR TO LAUNCH
-                </span>
-              </div>
-            </BrowserWindow>
+            <p className="font-sans text-[15px] sm:text-[17px] text-[var(--foreground)]/80 max-w-md leading-relaxed">
+              Meet the mentors supporting BuildLab ’26.
+            </p>
           </motion.div>
         )}
       </Container>

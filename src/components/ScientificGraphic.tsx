@@ -24,19 +24,7 @@ export function ScientificGraphic({
           ))}
         </div>
 
-        {/* Technical Coordinate Badges */}
-        <div className="absolute top-3 left-4 font-mono text-[10px] text-[var(--muted-foreground)] tracking-widest uppercase">
-          FIG 01.A — LAB SYNTHESIS
-        </div>
-        <div className="absolute top-3 right-4 font-mono text-[10px] text-[var(--foreground)] font-semibold tracking-widest uppercase">
-          SEC // 26.BL
-        </div>
-        <div className="absolute bottom-3 left-4 font-mono text-[10px] text-[var(--muted-foreground)] tracking-wider">
-          COORDINATES: 28.98° N, 77.06° E
-        </div>
-        <div className="absolute bottom-3 right-4 font-mono text-[10px] text-[var(--muted-foreground)] tracking-wider">
-          STATUS: ACTIVE
-        </div>
+
 
         {/* Center SVG Composition */}
         <svg
@@ -196,14 +184,6 @@ export function ScientificGraphic({
             </linearGradient>
           </defs>
         </svg>
-
-        {/* Small floating technical pill label */}
-        <div className="absolute -bottom-3 right-6 bg-[var(--surface-card)] border border-[var(--border)] px-2.5 py-1 rounded-[6px] shadow-[2px_2px_0px_0px_rgba(0,0,0,0.12)] flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-[var(--green)] inline-block animate-pulse" />
-          <span className="font-mono text-[11px] font-semibold tracking-wider text-[var(--foreground)]">
-            BL-EXP // 2026
-          </span>
-        </div>
       </div>
     );
   }
