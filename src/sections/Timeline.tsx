@@ -67,19 +67,7 @@ export function Timeline() {
             </div>
 
             {/* Main Horizontal Timeline Structure */}
-            <div className="relative pt-12 pb-8">
-              {/* Connecting Line */}
-              <div className="absolute top-[82px] left-[5%] right-[5%] h-[2px] bg-[var(--border)]">
-                {/* Active progress accent line */}
-                <motion.div
-                  initial={{ scaleX: 0 }}
-                  whileInView={{ scaleX: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: shouldReduceMotion ? 0 : 0.85, ease: easeCurve, delay: 0.2 }}
-                  className="origin-left h-full spectrum-gradient-bg"
-                />
-              </div>
-
+            <div className="relative pt-6 pb-6">
               {/* Milestones Horizontal Grid */}
               <div className="relative z-10 grid grid-cols-2 gap-12">
                 {/* 01. INAUGURATION (START) */}
