@@ -49,7 +49,9 @@ export function DiscordGuide() {
                 READY TO JOIN BUILDLAB?
               </h3>
               <p className="font-sans text-[13px] sm:text-[14px] text-[var(--muted-foreground)] leading-relaxed">
-                The official Discord invite link will be published to registered cohorts prior to the in-person kick-off at the 5th Floor Conference Room, Engineering Block.
+                {LINKS.isDiscordAvailable
+                  ? "Join the official TechSpace BuildLab '26 Discord server to meet mentors, coordinate with your team, and receive live announcements."
+                  : "The official Discord invite link will be published to registered cohorts prior to the in-person kick-off at the 5th Floor Conference Room, Engineering Block."}
               </p>
             </div>
 

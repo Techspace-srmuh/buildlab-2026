@@ -1,8 +1,7 @@
 export const LINKS = {
-  // Official Discord invite URL will be announced prior to launch.
-  // Left empty so UI gracefully marks invite as pending/unavailable until provided.
-  discord: "",
-  isDiscordAvailable: false,
+  // Official Discord invite URL
+  discord: "https://discord.gg/F9TbeHDKj",
+  isDiscordAvailable: true,
 
   // GitHub Organization and Repository
   githubOrg: "https://github.com/Techspace-srmuh",
