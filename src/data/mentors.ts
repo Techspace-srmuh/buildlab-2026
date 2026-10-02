@@ -44,8 +44,8 @@ export const MENTORS: Mentor[] = [
     github: "https://github.com/aryanexe07",
   },
   {
-    id: "aryan-tathagat",
-    name: "Aryan Tathagat",
+    id: "tathagat-aryan",
+    name: "Tathagat Aryan",
     role: "Full-Stack Development Lead",
     track: "Intermediate",
     bio: "Full-stack developer focused on building responsive, user-friendly web applications.",
