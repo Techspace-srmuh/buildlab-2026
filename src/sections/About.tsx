@@ -5,13 +5,13 @@ import { Section } from "@/components/Section";
 export function About() {
 
   const facts = [
-    { label: "DATES", value: "05 OCT — 23 OCT 2026" },
+    { label: "DATES", value: "06 OCT — 23 OCT 2026" },
     { label: "DURATION", value: "3 WEEKS" },
     { label: "ELIGIBILITY", value: "B.TECH CSE / BCA CS" },
     { label: "YEARS", value: "YEAR I — III" },
     { label: "FORMAT", value: "PROJECT-BASED LEARNING COMPETITION" },
     { label: "PLATFORMS", value: "GITHUB + DISCORD" },
-    { label: "INAUGURATION", value: "05 OCT · 10:30 AM" },
+    { label: "INAUGURATION", value: "06 OCT · 10:30 AM" },
     { label: "VENUE", value: "5TH FLOOR · CONFERENCE ROOM · ENGINEERING BLOCK" },
   ];
 

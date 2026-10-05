@@ -15,14 +15,13 @@ BuildLab is designed around one core idea: **learn by building real projects.** 
 | **Event** | TechSpace BuildLab ’26 |
 | **Organizer** | TechSpace, SRM University, Sonepat |
 | **Format** | Three-Week Project-Based Learning Competition |
-| **Dates** | **5 October – 23 October 2026** (05.10.2026 – 23.10.2026) |
-| **Inauguration** | **5 October 2026, 10:30 AM** |
+| **Dates** | **6 October – 23 October 2026** (06.10.2026 – 23.10.2026) |
+| **Inauguration** | **6 October 2026, 10:30 AM** |
 | **Venue** | **5th Floor, Conference Room, EB** |
 | **Eligibility** | SRM University B.Tech CSE / BCA CS, **Year I–III** |
 | **Online Platforms** | GitHub + Discord |
-| **Total Budget** | ₹3,500 |
-| **Prizes** | ₹1,000 × 3 tracks = **₹3,000 Total Cash Pool** |
-| **Certificates** | Completion & Winner Certificates (₹500 allocation) |
+| **Prizes** | **Exciting prizes to the winner from each track** |
+| **Certificates** | Completion & Winner Certificates |
 | **Key Personnel** | Mentors, Evaluation Panel, Faculty Coordinator |
 
 ---
@@ -32,27 +31,27 @@ BuildLab is designed around one core idea: **learn by building real projects.** 
 ### 1. Beginner — Solo
 * **Format:** Individual (1 Member)
 * **Target:** Students new to Git/GitHub or building their first complete project.
-* **Prize:** ₹1,000 cash prize for winning project + completion certificates.
+* **Prize:** Exciting prizes for winning project + completion certificates.
 
 ### 2. Intermediate — Duo
 * **Format:** Pair (2 Members)
 * **Target:** Students with prior project experience and working knowledge of Git.
 * **Emphasis:** Division of work, Pull Requests, and cross-peer review.
-* **Prize:** ₹1,000 cash prize for winning team + completion certificates.
+* **Prize:** Exciting prizes for winning team + completion certificates.
 
 ### 3. Advanced — Squad
 * **Format:** Squad (3–4 Members)
 * **Target:** Students with strong fundamentals, prior project experience, and team-workflow knowledge.
 * **Emphasis:** Technically ambitious, modular architecture, CI testing, and stretch goals.
-* **Prize:** ₹1,000 cash prize for winning squad + completion certificates.
+* **Prize:** Exciting prizes for winning squad + completion certificates.
 
 ---
 
-## 📅 Official Schedule (05.10.2026 – 23.10.2026)
+## 📅 Official Schedule (06.10.2026 – 23.10.2026)
 
 * **Before Day 1:** Registration, GitHub entry task, track selection, and squad formation.
-* **05 October 2026 (10:30 AM):** Inauguration & Kick-off (5th Floor, Conference Room, EB).
-* **05–07 October 2026:** PRD Drafting & Submission.
+* **06 October 2026 (10:30 AM):** Inauguration & Kick-off (5th Floor, Conference Room, EB).
+* **06–07 October 2026:** PRD Drafting & Submission.
 * **07 October 2026:** PRD Approval Deadline (development begins only after mentor approval).
 * **08–15 October 2026:** Core Development (Week 2 sprint via GitHub PRs).
 * **15 October 2026:** Mid-Program Milestone Review.

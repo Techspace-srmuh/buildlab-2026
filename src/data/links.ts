@@ -8,7 +8,7 @@ export const LINKS = {
   githubRepo: "https://github.com/Techspace-srmuh/buildlab-2026",
 
   // Organization website
-  techspaceWeb: "https://techspace.club",
+  techspaceWeb: "https://techspacesrmuniversity.vercel.app/",
 
   // Global cross-route anchors
   explore: "/#about",
@@ -19,5 +19,5 @@ export const LINKS = {
   discordGuide: "/#discord",
   githubWorkflow: "/#workflow",
   prizes: "/#prizes",
-  registration: "/#register",
+  registration: "https://forms.gle/Qotb8u3SZfUfVQu78",
 };

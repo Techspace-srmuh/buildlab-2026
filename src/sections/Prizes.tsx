@@ -33,7 +33,7 @@ export function Prizes() {
 
           <div className="lg:col-span-4 border-t lg:border-t-0 lg:border-l border-[var(--border)] pt-4 lg:pt-0 lg:pl-8">
             <p className="font-mono text-[14px] sm:text-[15px] uppercase tracking-wider text-[var(--foreground)] leading-relaxed font-medium">
-              Official cash awards and credentials verified by TechSpace, SRM University, Sonepat.
+              Exciting prizes to the winner from each track and credentials verified by TechSpace, SRM University, Sonepat.
             </p>
           </div>
         </div>
@@ -77,14 +77,17 @@ export function Prizes() {
                 </div>
               </div>
 
-              {/* Dominant Cash Amount (Visual Focal Point) */}
+              {/* Dominant Award Block (Visual Focal Point) */}
               <div className="pt-6 border-t border-[var(--border)]">
-                <span className="font-mono text-[10px] text-[var(--muted-foreground)] uppercase tracking-widest block mb-1">
-                  TRACK PRIZE
+                <span className="font-mono text-[10px] text-[var(--muted-foreground)] uppercase tracking-widest block mb-2">
+                  TRACK RECOGNITION
                 </span>
-                <div className="font-display font-black text-5xl sm:text-6xl text-[var(--foreground)] tracking-tight leading-none group-hover:scale-[1.02] transition-transform origin-left">
-                  {prize.amount}
+                <div className="font-display font-black text-2xl sm:text-3xl uppercase tracking-tight leading-tight spectrum-gradient-text group-hover:scale-[1.02] transition-transform origin-left">
+                  {prize.award}
                 </div>
+                <p className="font-mono text-[11px] text-[var(--muted-foreground)] uppercase tracking-wider mt-2">
+                  {prize.awardDescription}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -92,21 +95,21 @@ export function Prizes() {
 
         {/* Supporting Data Block & Certificates */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 p-6 sm:p-8 border border-[var(--border)] rounded-[18px] bg-[var(--surface-muted)]/50 font-mono">
-          {/* Total Cash Statement */}
-          <div className="md:col-span-4 flex flex-col justify-center border-b md:border-b-0 md:border-r border-[var(--border)] pb-6 md:pb-0 md:pr-6">
+          {/* Track Awards Statement */}
+          <div className="md:col-span-6 flex flex-col justify-center border-b md:border-b-0 md:border-r border-[var(--border)] pb-6 md:pb-0 md:pr-6">
             <span className="text-[10px] text-[var(--muted-foreground)] uppercase tracking-widest block mb-1 font-semibold">
-              TOTAL CASH PRIZES
+              TRACK AWARDS
             </span>
-            <div className="font-display font-black text-4xl sm:text-5xl text-[var(--foreground)] tracking-tight">
-              {RECOGNITION.totalCashPrizes}
+            <div className="font-display font-black text-2xl sm:text-3xl uppercase tracking-tight spectrum-gradient-text leading-tight">
+              EXCITING PRIZES TO THE WINNER FROM EACH TRACK
             </div>
-            <span className="text-[11px] text-[var(--muted-foreground)] mt-1">
-              ₹500 · ₹1,000 · ₹1,500 across tracks
+            <span className="text-[11px] text-[var(--muted-foreground)] mt-2">
+              Awarded across Beginner, Intermediate & Advanced tracks
             </span>
           </div>
 
           {/* Certificates Statement */}
-          <div className="md:col-span-8 flex flex-col justify-center pl-0 md:pl-4 space-y-2">
+          <div className="md:col-span-6 flex flex-col justify-center pl-0 md:pl-4 space-y-2">
             <span className="text-[10px] text-[var(--muted-foreground)] uppercase tracking-widest block font-semibold">
               CREDENTIALS & DOCUMENTATION
             </span>

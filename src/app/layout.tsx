@@ -9,9 +9,10 @@ import "./globals.css";
 // Per Phase 7 instructions, placeholder/fake graphics should NOT be fabricated automatically.
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://techspacesrmuniversity.vercel.app"),
   title: "TechSpace BuildLab ’26 — Learn by Building",
   description:
-    "TechSpace BuildLab ’26 is a three-week project-based learning competition by TechSpace, SRM University, Sonepat, running from 5 October to 23 October 2026.",
+    "TechSpace BuildLab ’26 is a three-week project-based learning competition by TechSpace, SRM University, Sonepat, running from 6 October to 23 October 2026.",
   keywords: [
     "TechSpace",
     "BuildLab",
@@ -26,19 +27,40 @@ export const metadata: Metadata = {
   authors: [{ name: "TechSpace, SRM University, Sonepat" }],
   creator: "TechSpace",
   publisher: "TechSpace, SRM University, Sonepat",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   openGraph: {
     title: "TechSpace BuildLab ’26 — Learn by Building",
     description:
-      "TechSpace BuildLab ’26 is a three-week project-based learning competition by TechSpace, SRM University, Sonepat, running from 5 October to 23 October 2026.",
+      "TechSpace BuildLab ’26 is a three-week project-based learning competition by TechSpace, SRM University, Sonepat, running from 6 October to 23 October 2026.",
     siteName: "TechSpace BuildLab ’26",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1024,
+        height: 535,
+        alt: "TechSpace BuildLab ’26 — Learn by Building",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "TechSpace BuildLab ’26 — Learn by Building",
     description:
-      "TechSpace BuildLab ’26 is a three-week project-based learning competition by TechSpace, SRM University, Sonepat, running from 5 October to 23 October 2026.",
+      "TechSpace BuildLab ’26 is a three-week project-based learning competition by TechSpace, SRM University, Sonepat, running from 6 October to 23 October 2026.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

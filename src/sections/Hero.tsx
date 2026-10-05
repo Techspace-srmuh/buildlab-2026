@@ -63,13 +63,26 @@ export function Hero() {
         <Container>
           <div className="flex items-center justify-between font-mono text-[11px] md:text-[12px] uppercase text-[var(--muted-foreground)] tracking-[0.16em]">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-[var(--blue)] inline-block" />
-              <span className="text-[var(--foreground)] font-semibold">TECHSPACE</span>
+              <div className="w-4 h-4 rounded-sm bg-black flex items-center justify-center p-0.5 border border-[var(--border)] overflow-hidden shrink-0">
+                <img
+                  src="/techspace-logo.png"
+                  alt="TechSpace Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <a
+                href={LINKS.techspaceWeb}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--foreground)] font-semibold hover:underline"
+              >
+                TECHSPACE
+              </a>
               <span className="text-[var(--border)]">/</span>
               <span>SRM UNIVERSITY SONEPAT</span>
             </div>
             <div className="font-semibold text-[var(--foreground)]">
-              05 OCT — 23 OCT 2026
+              06 OCT — 23 OCT 2026
             </div>
           </div>
         </Container>
@@ -111,8 +124,19 @@ export function Hero() {
                 className="flex flex-wrap items-center gap-4 pt-2"
               >
                 <Button
-                  href={LINKS.projects}
+                  href={LINKS.registration}
+                  target="_blank"
                   variant="primary"
+                  size="lg"
+                  withArrow
+                  arrowDirection="up-right"
+                >
+                  REGISTER NOW
+                </Button>
+
+                <Button
+                  href={LINKS.projects}
+                  variant="secondary"
                   size="lg"
                   withArrow
                   arrowDirection="right"
@@ -123,12 +147,12 @@ export function Hero() {
                 <Button
                   href={LINKS.discord || LINKS.discordGuide}
                   target={LINKS.discord ? "_blank" : undefined}
-                  variant="secondary"
+                  variant="outline"
                   size="lg"
                   withArrow
                   arrowDirection={LINKS.discord ? "up-right" : "right"}
                 >
-                  JOIN DISCORD
+                  DISCORD
                 </Button>
               </motion.div>
             </div>
@@ -155,7 +179,7 @@ export function Hero() {
                 INAUGURATION
               </span>
               <span className="font-semibold text-[var(--foreground)]">
-                05 OCT · 10:30 AM
+                06 OCT · 10:30 AM
               </span>
             </div>
 
@@ -182,7 +206,7 @@ export function Hero() {
                 RECOGNITION
               </span>
               <span className="font-semibold text-[var(--foreground)]">
-                ₹3,000 Cash Pool + Certificates
+                Exciting Prizes + Certificates
               </span>
             </div>
           </div>

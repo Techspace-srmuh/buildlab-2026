@@ -47,16 +47,25 @@ export function Navigation() {
           {/* Brand Logo */}
           <Link
             href="/"
-            className="group flex flex-col items-start select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--foreground)]"
+            className="group flex items-center gap-2.5 sm:gap-3 select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--foreground)]"
           >
-            <span className="font-mono text-[10px] md:text-[11px] tracking-[0.2em] uppercase text-[var(--muted-foreground)] font-medium group-hover:text-[var(--foreground)] transition-colors">
-              TECHSPACE
-            </span>
-            <div className="flex items-center gap-1.5">
-              <span className="font-display font-black text-xl md:text-2xl tracking-tight uppercase text-[var(--foreground)]">
-                BUILDLAB ’26
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-black flex items-center justify-center p-1 border border-[var(--border)] overflow-hidden shrink-0 group-hover:border-[var(--foreground)] transition-all">
+              <img
+                src="/techspace-logo.png"
+                alt="TechSpace Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="flex flex-col items-start">
+              <span className="font-mono text-[10px] md:text-[11px] tracking-[0.2em] uppercase text-[var(--muted-foreground)] font-medium group-hover:text-[var(--foreground)] transition-colors">
+                TECHSPACE
               </span>
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--cyan)]" />
+              <div className="flex items-center gap-1.5">
+                <span className="font-display font-black text-xl md:text-2xl tracking-tight uppercase text-[var(--foreground)]">
+                  BUILDLAB ’26
+                </span>
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--cyan)]" />
+              </div>
             </div>
           </Link>
 
@@ -78,16 +87,29 @@ export function Navigation() {
             {/* Direct Theme Toggle button */}
             <ThemeToggle />
 
+            <div className="hidden sm:block">
+              <Button
+                href={LINKS.registration}
+                target="_blank"
+                size="sm"
+                variant="primary"
+                withArrow
+                arrowDirection="up-right"
+              >
+                REGISTER
+              </Button>
+            </div>
+
             <div className="hidden md:block">
               <Button
                 href={LINKS.discord || LINKS.discordGuide}
                 target={LINKS.discord ? "_blank" : undefined}
                 size="sm"
-                variant="primary"
+                variant="secondary"
                 withArrow
                 arrowDirection={LINKS.discord ? "up-right" : "right"}
               >
-                JOIN DISCORD
+                DISCORD
               </Button>
             </div>
 
@@ -137,10 +159,22 @@ export function Navigation() {
             </nav>
             <div className="pt-3 border-t border-[var(--border)] flex flex-col gap-3">
               <Button
+                href={LINKS.registration}
+                target="_blank"
+                size="md"
+                variant="primary"
+                withArrow
+                arrowDirection="up-right"
+                className="w-full"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                REGISTER NOW
+              </Button>
+              <Button
                 href={LINKS.discord || LINKS.discordGuide}
                 target={LINKS.discord ? "_blank" : undefined}
                 size="md"
-                variant="primary"
+                variant="secondary"
                 withArrow
                 arrowDirection={LINKS.discord ? "up-right" : "right"}
                 className="w-full"

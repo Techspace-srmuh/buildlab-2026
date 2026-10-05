@@ -2,7 +2,8 @@ export interface PrizeTrack {
   track: string;
   format: string;
   teamSize: string;
-  amount: string;
+  award: string;
+  awardDescription: string;
   accent: "beginner" | "intermediate" | "advanced";
   accentHex: string;
   softHex: string;
@@ -14,7 +15,8 @@ export const PRIZES: PrizeTrack[] = [
     track: "Beginner",
     format: "Solo",
     teamSize: "1 Member",
-    amount: "₹500",
+    award: "Exciting Prizes",
+    awardDescription: "To the winning solo builder",
     accent: "beginner",
     accentHex: "#1457D9",
     softHex: "#DCEBFF",
@@ -24,7 +26,8 @@ export const PRIZES: PrizeTrack[] = [
     track: "Intermediate",
     format: "Duo",
     teamSize: "2 Members",
-    amount: "₹1,000",
+    award: "Exciting Prizes",
+    awardDescription: "To the winning duo team",
     accent: "intermediate",
     accentHex: "#62C94A",
     softHex: "#E5F4D8",
@@ -34,7 +37,8 @@ export const PRIZES: PrizeTrack[] = [
     track: "Advanced",
     format: "Squad",
     teamSize: "3–4 Members",
-    amount: "₹1,500",
+    award: "Exciting Prizes",
+    awardDescription: "To the winning squad",
     accent: "advanced",
     accentHex: "#F3D21A",
     softHex: "#FFF3B8",
@@ -43,8 +47,7 @@ export const PRIZES: PrizeTrack[] = [
 ];
 
 export const RECOGNITION = {
-  totalCashPrizes: "₹3,000",
-  certificatesMisc: "₹500",
+  headline: "Exciting prizes to the winner from each track",
   certificates: [
     "Completion certificates",
     "Winner certificates",

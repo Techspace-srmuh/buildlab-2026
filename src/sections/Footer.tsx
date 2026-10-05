@@ -15,6 +15,7 @@ export function Footer() {
   ];
 
   const externalLinks = [
+    { name: "Register (Google Form)", href: LINKS.registration },
     { name: "TechSpace Website", href: LINKS.techspaceWeb },
     { name: "TechSpace GitHub", href: LINKS.githubOrg },
     { name: "BuildLab GitHub", href: LINKS.githubRepo },
@@ -30,15 +31,24 @@ export function Footer() {
       <Container>
         {/* Top Header Block: Branding & Tagline */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-10 border-b border-[var(--border)]">
-          <div>
-            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--muted-foreground)] font-medium block mb-1">
-              TECHSPACE
-            </span>
-            <div className="flex items-center gap-2">
-              <span className="font-display font-black text-3xl sm:text-4xl uppercase tracking-tight text-[var(--foreground)]">
-                BUILDLAB ’26
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg bg-black flex items-center justify-center p-1 border border-[var(--border)] overflow-hidden shrink-0">
+              <img
+                src="/techspace-logo.png"
+                alt="TechSpace Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div>
+              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--muted-foreground)] font-medium block mb-1">
+                TECHSPACE
               </span>
-              <span className="w-2 h-2 rounded-full bg-[var(--cyan)]" />
+              <div className="flex items-center gap-2">
+                <span className="font-display font-black text-3xl sm:text-4xl uppercase tracking-tight text-[var(--foreground)]">
+                  BUILDLAB ’26
+                </span>
+                <span className="w-2 h-2 rounded-full bg-[var(--cyan)]" />
+              </div>
             </div>
           </div>
 

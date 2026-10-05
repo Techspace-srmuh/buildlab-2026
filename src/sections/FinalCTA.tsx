@@ -15,8 +15,14 @@ export function FinalCTA() {
 
           {/* Top Header */}
           <div className="relative z-10 flex items-center justify-between font-mono text-[11px] md:text-[12px] uppercase text-[var(--muted-foreground)] tracking-[0.18em] pb-6 mb-8 border-b border-[var(--border)]">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[var(--cyan)]" />
+            <div className="flex items-center gap-2.5">
+              <div className="w-5 h-5 rounded bg-black flex items-center justify-center p-0.5 border border-[var(--border)] overflow-hidden shrink-0">
+                <img
+                  src="/techspace-logo.png"
+                  alt="TechSpace Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <span className="font-bold text-[var(--foreground)]">TECHSPACE BUILDLAB ’26</span>
             </div>
           </div>
@@ -39,14 +45,25 @@ export function FinalCTA() {
               {/* Action Buttons */}
               <div className="pt-4 flex flex-wrap items-center gap-4">
                 <Button
+                  href={LINKS.registration}
+                  target="_blank"
+                  variant="primary"
+                  size="lg"
+                  withArrow
+                  arrowDirection="up-right"
+                >
+                  REGISTER FOR BUILDLAB
+                </Button>
+
+                <Button
                   href={LINKS.discord || LINKS.discordGuide}
                   target={LINKS.discord ? "_blank" : undefined}
-                  variant="primary"
+                  variant="secondary"
                   size="lg"
                   withArrow
                   arrowDirection={LINKS.discord ? "up-right" : "right"}
                 >
-                  JOIN THE BUILD
+                  JOIN DISCORD
                 </Button>
 
                 <Button
@@ -56,7 +73,7 @@ export function FinalCTA() {
                   withArrow
                   arrowDirection="right"
                 >
-                  EXPLORE BUILDLAB
+                  EXPLORE TRACKS
                 </Button>
               </div>
             </div>

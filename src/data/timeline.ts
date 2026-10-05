@@ -16,8 +16,8 @@ export interface TimelineMilestone {
 export const TIMELINE: TimelineMilestone[] = [
   {
     id: "inauguration",
-    date: "05 October 2026",
-    shortDate: "05 OCT",
+    date: "06 October 2026",
+    shortDate: "06 OCT",
     year: "’26",
     title: "INAUGURATION",
     subtitle: "IN-PERSON KICK-OFF",
