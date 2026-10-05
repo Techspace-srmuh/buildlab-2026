@@ -12,7 +12,7 @@ export function About() {
     { label: "FORMAT", value: "PROJECT-BASED LEARNING COMPETITION" },
     { label: "PLATFORMS", value: "GITHUB + DISCORD" },
     { label: "INAUGURATION", value: "06 OCT · 10:30 AM" },
-    { label: "VENUE", value: "5TH FLOOR · CONFERENCE ROOM · ENGINEERING BLOCK" },
+    { label: "VENUE", value: "WILL BE INFORMED IN THE WHATSAPP GROUP (MAKE SURE TO JOIN IT)" },
   ];
 
   return (

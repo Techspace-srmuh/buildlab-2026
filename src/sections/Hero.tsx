@@ -187,8 +187,8 @@ export function Hero() {
               <span className="block text-[var(--muted-foreground)] uppercase tracking-wider text-[10px]">
                 VENUE
               </span>
-              <span className="font-semibold text-[var(--foreground)] truncate block">
-                5th Floor Conf. Room, Engineering Block
+              <span className="font-semibold text-[var(--foreground)] block text-[11px] leading-tight">
+                Will be informed in the WhatsApp group, make sure to join it
               </span>
             </div>
 

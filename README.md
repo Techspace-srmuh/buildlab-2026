@@ -17,7 +17,7 @@ BuildLab is designed around one core idea: **learn by building real projects.** 
 | **Format** | Three-Week Project-Based Learning Competition |
 | **Dates** | **6 October – 23 October 2026** (06.10.2026 – 23.10.2026) |
 | **Inauguration** | **6 October 2026, 10:30 AM** |
-| **Venue** | **5th Floor, Conference Room, EB** |
+| **Venue** | **Will be informed in the WhatsApp group (make sure to join it)** |
 | **Eligibility** | SRM University B.Tech CSE / BCA CS, **Year I–III** |
 | **Online Platforms** | GitHub + Discord |
 | **Prizes** | **Exciting prizes to the winner from each track** |
@@ -50,7 +50,7 @@ BuildLab is designed around one core idea: **learn by building real projects.** 
 ## 📅 Official Schedule (06.10.2026 – 23.10.2026)
 
 * **Before Day 1:** Registration, GitHub entry task, track selection, and squad formation.
-* **06 October 2026 (10:30 AM):** Inauguration & Kick-off (5th Floor, Conference Room, EB).
+* **06 October 2026 (10:30 AM):** Inauguration & Kick-off (Venue will be informed in the WhatsApp group, make sure to join it).
 * **06–07 October 2026:** PRD Drafting & Submission.
 * **07 October 2026:** PRD Approval Deadline (development begins only after mentor approval).
 * **08–15 October 2026:** Core Development (Week 2 sprint via GitHub PRs).
