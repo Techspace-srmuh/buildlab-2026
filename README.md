@@ -110,3 +110,4 @@ Before final deployment to production, complete the following content and asset 
 5. **Favicon / App Icon**:
    - Place official TechSpace favicon at `src/app/favicon.ico` or `public/favicon.ico`.
 
+# Techspace-srmuh/buildlab-2026

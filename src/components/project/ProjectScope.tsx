@@ -51,7 +51,11 @@ export function ProjectScope({
         </span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div
+        className={`grid grid-cols-1 gap-5 ${
+          hasStretch ? "md:grid-cols-2" : "md:grid-cols-1"
+        }`}
+      >
         {/* CORE: Mandatory Scope Card */}
         <div
           className={`p-5 rounded-[12px] border-2 bg-[var(--surface-card)] flex flex-col justify-between shadow-[2px_2px_0px_0px_rgba(8,8,8,0.06)] ${trackTheme.border}`}
@@ -124,16 +128,7 @@ export function ProjectScope({
               <span>ADDITIONAL MARKS</span>
             </div>
           </div>
-        ) : (
-          <div className="p-5 rounded-[12px] border border-[var(--border)]/50 bg-[var(--surface-muted)]/15 flex flex-col justify-center items-center text-center">
-            <span className="font-mono text-[11px] uppercase tracking-wider text-[var(--muted-foreground)]">
-              STRETCH SCOPE
-            </span>
-            <p className="font-sans text-[12px] text-[var(--muted-foreground)]/80 pt-1 max-w-xs">
-              This statement focuses purely on high-fidelity execution of its core architecture.
-            </p>
-          </div>
-        )}
+        ) : null}
       </div>
     </div>
   );
